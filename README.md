@@ -202,4 +202,4 @@ Current version: see `VERSION`.
 
 ## License
 
-No license is included by default. Repository owners should add a license appropriate for their own use before publishing or distributing modified versions.
+This repository is licensed under the MIT License. See `LICENSE`.

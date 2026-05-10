@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1
+
+Restored the repository MIT license and updated the README license note.
+
 ## 0.1.0
 
 Initial lightweight `agent-seed` release.
