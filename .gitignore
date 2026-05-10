@@ -1,0 +1,41 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.orig
+
+# Logs
+*.log
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Python cache, useful when agents inspect or prototype locally
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node cache, useful when agents inspect or prototype locally
+node_modules/
+.npm/
+.yarn/
+
+# Build outputs
+dist/
+build/
+out/
+target/
