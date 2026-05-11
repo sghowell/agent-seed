@@ -262,19 +262,25 @@ Use .agent/DOMAINS/FRONTENDS.md. Review this frontend change for product intent,
 For this visual change, run or inspect browser evidence such as screenshots, visual regression output, or manual viewport checks. Confirm text fits, controls are accessible, layouts do not overlap, responsive states work, and the UI matches the intended workflow.
 ```
 
-## 44. Final Pre-Submit Review
+## 44. Current-Source Refresh
+
+```text
+Use .agent/WORKFLOW.md. Before planning or editing, refresh current primary sources for any facts that can drift: agent ecosystem behavior, MCP/tool behavior, security guidance, standards, APIs, package behavior, model/data/benchmark claims, hardware/runtime behavior, laws, or release facts. Record source title, URL or local path, date checked, version or publication date, decision depending on the source, and remaining drift risk.
+```
+
+## 45. Final Pre-Submit Review
 
 ```text
 Before finalizing, reread AGENTS.md, .agent/DONE.md, and any active domain overlays. Review the diff for correctness, tests, docs, unnecessary churn, dependency risk, performance risk, security risk, source-of-truth drift, specialist-review requirements, and remaining uncertainty. Then provide a final response with Summary, Validation, and Notes.
 ```
 
-## 45. Create An Execution Plan Only
+## 46. Create An Execution Plan Only
 
 ```text
 Create an execution plan using .agent/TEMPLATES/EXEC_PLAN.md. Do not edit code yet. The plan should be concrete enough for another agent or engineer to implement. Include assumptions, affected files, active overlays, validation strategy, review strategy, risks, and open questions.
 ```
 
-## 46. Convert A Vague Request Into A Safe Plan
+## 47. Convert A Vague Request Into A Safe Plan
 
 ```text
 The request is broad or ambiguous. Use AGENTS.md and .agent/WORKFLOW.md to narrow it into a safe implementation plan. Identify what can be done now, what assumptions are required, what should not be changed, what validation would prove success, and what review is needed. Do not edit files yet.

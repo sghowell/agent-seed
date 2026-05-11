@@ -153,6 +153,7 @@ Agentic security: <rating>
 Adapter guidance: <rating>
 Nested guidance: <rating>
 Domain overlays: <rating>
+current-source refresh guidance: <rating>
 Review protocol: <rating>
 ```
 
@@ -175,4 +176,5 @@ Local customizations needed: <customizations>
 Domain overlays to adopt: <overlays>
 Adapter files to create: <adapter files or none>
 Nested guidance to add: <paths or none>
+current-source refresh needs: <sources or none>
 ```

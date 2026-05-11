@@ -9,14 +9,15 @@ Use the full workflow for substantial changes. For tiny changes, use the same pr
 ```text
 1. Understand the task.
 2. Inspect the repository.
-3. Identify the smallest safe change.
-4. Plan when risk warrants planning.
-5. Model security and safety risk when relevant.
-6. Implement narrowly.
-7. Validate with relevant checks.
-8. Review the diff.
-9. Request specialist review when risk warrants it.
-10. Summarize honestly.
+3. Refresh current external sources when the task depends on fast-moving facts.
+4. Identify the smallest safe change.
+5. Plan when risk warrants planning.
+6. Model security and safety risk when relevant.
+7. Implement narrowly.
+8. Validate with relevant checks.
+9. Review the diff.
+10. Request specialist review when risk warrants it.
+11. Summarize honestly.
 ```
 
 ## 1. Understand The Task
@@ -59,7 +60,35 @@ Look for:
 
 Do not assume a convention before checking whether the repository already has one.
 
-## 3. Identify The Smallest Safe Change
+## 3. Refresh Current External Sources When Needed
+
+Refresh current sources before planning or editing when the task depends on information that can drift.
+
+Refresh is required for:
+
+- agent ecosystem behavior,
+- tool, MCP, plugin, skill, or adapter behavior,
+- security guidance,
+- laws, standards, policies, or compliance requirements,
+- model, dataset, benchmark, or hardware claims,
+- package, API, framework, runtime, or cloud-provider behavior,
+- public product behavior,
+- release, deployment, pricing, or availability facts.
+
+Prefer primary sources: official documentation, specifications, standards, release notes, project repositories, research papers, benchmark reports, or source-of-truth project docs.
+
+Record:
+
+- source title,
+- URL or local path,
+- date checked,
+- relevant version or publication date,
+- what decision depends on the source,
+- uncertainty or drift risk.
+
+Do not freeze stale assumptions into repository guidance when a current primary source is practical to check.
+
+## 4. Identify The Smallest Safe Change
 
 Prefer the smallest coherent change that solves the task.
 
@@ -80,7 +109,7 @@ Avoid:
 - unnecessary file moves,
 - and changes to unrelated behavior.
 
-## 4. Decide Whether To Plan First
+## 5. Decide Whether To Plan First
 
 A plan is required when the change is substantial or risky.
 
@@ -119,7 +148,7 @@ A plan should include:
 
 For a small localized change, a short inline plan is sufficient.
 
-## 5. Model Security And Safety Risk
+## 6. Model Security And Safety Risk
 
 For agent, MCP/tool, identity, secrets, network, sandbox, data, model, privacy, physical-world, or production-adjacent changes, create or update a threat model before implementation.
 
@@ -144,7 +173,7 @@ Security-sensitive work should identify:
 
 Request specialist or adversarial review when the change is high-risk.
 
-## 6. Implement Narrowly
+## 7. Implement Narrowly
 
 During implementation:
 
@@ -160,7 +189,7 @@ During implementation:
 
 When a discovered issue is outside the task, note it separately instead of fixing it opportunistically.
 
-## 7. Validate
+## 8. Validate
 
 Run the most relevant available checks.
 
@@ -196,7 +225,7 @@ For example:
 
 Never claim a check passed unless it was actually run and passed.
 
-## 8. Review The Diff
+## 9. Review The Diff
 
 Before finalizing, review the diff as if reviewing another engineer's work.
 
@@ -220,7 +249,7 @@ Check for:
 
 Use `.agent/TEMPLATES/REVIEW.md` for a structured review.
 
-## 9. Request Specialist Review When Needed
+## 10. Request Specialist Review When Needed
 
 Use `.agent/REVIEW_PROTOCOL.md` for review lanes, reviewer instructions, and disagreement handling.
 
@@ -240,7 +269,7 @@ Specialist review is triggered by:
 
 If specialist review is not available, record the gap and compensate with stronger local evidence where practical.
 
-## 10. Summarize Honestly
+## 11. Summarize Honestly
 
 Final summaries should be brief but evidence-based.
 

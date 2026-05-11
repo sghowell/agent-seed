@@ -44,7 +44,20 @@ Evidence required: <tests, benchmarks, proofs, review, traces, evals, screenshot
 <overlay>: <why it applies>
 ```
 
-## 6. Proposed Approach
+## 6. Current-Source Refresh
+
+Use this section to record current-source refresh work for drift-prone facts.
+
+```text
+Sources checked:
+- <source title and URL or local path>
+Date checked:
+Version or publication date:
+Decision depending on source:
+Drift risk:
+```
+
+## 7. Proposed Approach
 
 Describe the intended approach at a high level.
 
@@ -52,7 +65,7 @@ Describe the intended approach at a high level.
 <approach>
 ```
 
-## 7. Affected Files
+## 8. Affected Files
 
 List expected files or areas to change.
 
@@ -62,7 +75,7 @@ List expected files or areas to change.
 <path>: <expected change>
 ```
 
-## 8. Implementation Steps
+## 9. Implementation Steps
 
 Break the work into small, reviewable steps.
 
@@ -72,7 +85,7 @@ Break the work into small, reviewable steps.
 3. <step>
 ```
 
-## 9. Validation Strategy
+## 10. Validation Strategy
 
 List the checks that should prove the work is correct.
 
@@ -88,7 +101,7 @@ Hardware/browser/simulation checks: <command or not applicable>
 Manual validation: <steps or not applicable>
 ```
 
-## 10. Review Plan
+## 11. Review Plan
 
 ```text
 Self-review: <required checks>
@@ -98,7 +111,7 @@ Integration review: <needed/not needed and why>
 Reviewer evidence: <what reviewers should inspect>
 ```
 
-## 11. Evidence Plan
+## 12. Evidence Plan
 
 ```text
 Artifacts to preserve:
@@ -108,7 +121,7 @@ Data/model/provenance records:
 Reproducibility notes:
 ```
 
-## 12. Risks And Mitigations
+## 13. Risks And Mitigations
 
 ```text
 Risk: <risk>
@@ -118,7 +131,7 @@ Risk: <risk>
 Mitigation: <mitigation>
 ```
 
-## 13. Compatibility And Migration
+## 14. Compatibility And Migration
 
 Describe impact on public APIs, configs, schemas, persisted data, integrations, artifacts, or user workflows.
 
@@ -126,7 +139,7 @@ Describe impact on public APIs, configs, schemas, persisted data, integrations, 
 <compatibility notes>
 ```
 
-## 14. Rollback Or Recovery
+## 15. Rollback Or Recovery
 
 Describe how the change can be reverted or mitigated if it fails.
 
@@ -134,7 +147,7 @@ Describe how the change can be reverted or mitigated if it fails.
 <rollback notes>
 ```
 
-## 15. Accountability
+## 16. Accountability
 
 ```text
 Owner:
@@ -142,14 +155,14 @@ Approvals needed:
 Accepted risk record:
 ```
 
-## 16. Open Questions
+## 17. Open Questions
 
 ```text
 <question>
 <question>
 ```
 
-## 17. Completion Criteria
+## 18. Completion Criteria
 
 The work is complete when:
 
