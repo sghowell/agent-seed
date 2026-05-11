@@ -85,7 +85,7 @@ Review the proposed dependency change. Explain why the dependency is needed, whe
 ## 14. Agentic AI Threat Model
 
 ```text
-Use .agent/SECURITY.md and .agent/TEMPLATES/THREAT_MODEL.md. Threat-model this agentic system or change. Focus on prompt injection, goal hijack, tool misuse, excessive permissions, identity abuse, memory or context poisoning, data exfiltration, unsafe code execution, supply-chain risk, autonomy boundaries, approval gates, auditability, and residual risk.
+Use .agent/SECURITY.md and .agent/TEMPLATES/THREAT_MODEL.md. For drift-prone security, tool, MCP, agent, model, dataset, benchmark, hardware, API, legal, or standards facts, refresh current primary sources before threat modeling and record them in the template. Threat-model this agentic system or change. Focus on prompt injection, goal hijack, tool misuse, excessive permissions, identity abuse, memory or context poisoning, data exfiltration, unsafe code execution, supply-chain risk, autonomy boundaries, approval gates, auditability, and residual risk.
 ```
 
 ## 15. MCP Or Tool Review

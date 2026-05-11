@@ -8,6 +8,19 @@ Use this template for security-sensitive, agentic, tool/MCP, data, model, identi
 <system or change>
 ```
 
+## Current-Source Refresh
+
+Use this section when security, tool, MCP, agent, model, dataset, benchmark, hardware, API, legal, or standards facts may have drifted.
+
+```text
+Sources checked:
+- <source title and URL or local path>
+Date checked:
+Version or publication date:
+Decision depending on source:
+Drift risk:
+```
+
 ## Assets
 
 ```text
