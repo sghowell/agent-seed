@@ -149,10 +149,35 @@ TARGET_REPOSITORY/
 From this repository, copy the seed files into a target repository:
 
 ```bash
+mkdir -p /path/to/target-repo/.agent
 cp AGENTS.md /path/to/target-repo/AGENTS.md
-cp -R .agent /path/to/target-repo/.agent
+cp .agent/WORKFLOW.md /path/to/target-repo/.agent/WORKFLOW.md
+cp .agent/STANDARDS.md /path/to/target-repo/.agent/STANDARDS.md
+cp .agent/DONE.md /path/to/target-repo/.agent/DONE.md
+cp .agent/PROMPTS.md /path/to/target-repo/.agent/PROMPTS.md
 cp .agent/LOCAL_CONTEXT.example.md /path/to/target-repo/.agent/LOCAL_CONTEXT.md
+cp -R .agent/TEMPLATES /path/to/target-repo/.agent/TEMPLATES
 ```
+
+For high-rigor repositories, also copy the high-rigor core files:
+
+```bash
+cp .agent/QUALITY_BAR.md /path/to/target-repo/.agent/QUALITY_BAR.md
+cp .agent/SECURITY.md /path/to/target-repo/.agent/SECURITY.md
+cp .agent/ADAPTERS.md /path/to/target-repo/.agent/ADAPTERS.md
+cp .agent/REVIEW_PROTOCOL.md /path/to/target-repo/.agent/REVIEW_PROTOCOL.md
+cp .agent/NESTED_GUIDANCE.md /path/to/target-repo/.agent/NESTED_GUIDANCE.md
+```
+
+Copy domain overlays only when they match real repository work:
+
+```bash
+mkdir -p /path/to/target-repo/.agent/DOMAINS
+cp .agent/DOMAINS/README.md /path/to/target-repo/.agent/DOMAINS/README.md
+cp .agent/DOMAINS/AI_ML.md /path/to/target-repo/.agent/DOMAINS/AI_ML.md
+```
+
+The `AI_ML.md` command is an example. Select the actual overlays from `.agent/DOMAINS/README.md`; do not copy every overlay by default.
 
 Then edit:
 

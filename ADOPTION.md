@@ -39,7 +39,12 @@ Copy:
 
 ```text
 AGENTS.md
-.agent/
+.agent/WORKFLOW.md
+.agent/STANDARDS.md
+.agent/DONE.md
+.agent/PROMPTS.md
+.agent/LOCAL_CONTEXT.example.md
+.agent/TEMPLATES/
 ```
 
 Then rename:
@@ -57,7 +62,7 @@ AGENTS.md
 .agent/DONE.md
 ```
 
-This mode gives agents the full lightweight seed: workflow, standards, prompts, templates, and local context.
+This mode gives agents the full lightweight seed: workflow, standards, prompts, templates, and local context. It does not copy domain overlays by default.
 
 ## Mode 3: Reference-Only Adoption
 
@@ -109,12 +114,30 @@ High-rigor adoption is appropriate for projects involving AI/ML, systems softwar
 From the `agent-seed` repository:
 
 ```bash
+mkdir -p /path/to/target-repo/.agent
 cp AGENTS.md /path/to/target-repo/AGENTS.md
-cp -R .agent /path/to/target-repo/.agent
+cp .agent/WORKFLOW.md /path/to/target-repo/.agent/WORKFLOW.md
+cp .agent/STANDARDS.md /path/to/target-repo/.agent/STANDARDS.md
+cp .agent/DONE.md /path/to/target-repo/.agent/DONE.md
+cp .agent/PROMPTS.md /path/to/target-repo/.agent/PROMPTS.md
 cp .agent/LOCAL_CONTEXT.example.md /path/to/target-repo/.agent/LOCAL_CONTEXT.md
+cp -R .agent/TEMPLATES /path/to/target-repo/.agent/TEMPLATES
 ```
 
-For high-rigor adoption, remove domain overlays that do not apply after copying or copy only the relevant overlays.
+For high-rigor adoption, copy high-rigor core files and only the relevant overlays:
+
+```bash
+cp .agent/QUALITY_BAR.md /path/to/target-repo/.agent/QUALITY_BAR.md
+cp .agent/SECURITY.md /path/to/target-repo/.agent/SECURITY.md
+cp .agent/REVIEW_PROTOCOL.md /path/to/target-repo/.agent/REVIEW_PROTOCOL.md
+cp .agent/ADAPTERS.md /path/to/target-repo/.agent/ADAPTERS.md
+cp .agent/NESTED_GUIDANCE.md /path/to/target-repo/.agent/NESTED_GUIDANCE.md
+mkdir -p /path/to/target-repo/.agent/DOMAINS
+cp .agent/DOMAINS/README.md /path/to/target-repo/.agent/DOMAINS/README.md
+cp .agent/DOMAINS/AI_ML.md /path/to/target-repo/.agent/DOMAINS/AI_ML.md
+```
+
+The `AI_ML.md` command is an example. Select the overlays that match actual repository work.
 
 ### 2. Preserve Licensing
 
