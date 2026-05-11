@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.3
+
+Corrected the v0.2.2 review-fix release after a follow-up review.
+
+Included:
+
+- explicit MCP `authorization_servers` metadata and selection guidance,
+- explicit MCP PKCE metadata, `S256`, state, and open-redirect checks,
+- expanded threat-model fields for authorization-code and metadata risks,
+- completed v0.2.2 implementation-plan tracking evidence.
+
 ## 0.2.2
 
 Corrected the v0.2.1 review-fix release after a follow-up review.
