@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.2
+
+Corrected the v0.2.1 review-fix release after a follow-up review.
+
+Included:
+
+- updated MCP authorization guidance for the latest `2025-11-25` specification,
+- current-source refresh fields in the threat-model template,
+- clearer distinction between `AGENTS.md` source-of-truth files and vendor bridge files,
+- repaired `zsh`-safe validation commands in the v0.2.1 implementation plan.
+
 ## 0.2.1
 
 Corrected and tightened the v0.2 guidance after review.
