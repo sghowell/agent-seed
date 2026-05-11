@@ -466,7 +466,7 @@ Add this section immediately before `## Acceptance Criteria`, using the exact co
 
 The v0.2.4 plan was executed and merged.
 
-- Pushed v0.2.4 implementation tip before this evidence commit: `commit hash printed by git rev-parse HEAD`.
+- Pushed v0.2.4 implementation tip before this evidence commit: `f591931f96cd922b165b96840fbb29188744d2c2`.
 - Remote branch checked: `origin/main`.
 - Local feature branch cleanup: `agent-seed-v0.2.4-review-fixups` deleted.
 - Hosted CI check: `gh run list --limit 3 --json databaseId,status,conclusion,headSha,workflowName` returned `[]`, so no hosted GitHub Actions workflows existed for this repository.
@@ -502,6 +502,16 @@ Expected:
 - `main` is clean and aligned with `origin/main`.
 
 ---
+
+## Execution Evidence
+
+The v0.2.4 plan was executed and merged.
+
+- Pushed v0.2.4 implementation tip before this evidence commit: `f591931f96cd922b165b96840fbb29188744d2c2`.
+- Remote branch checked: `origin/main`.
+- Local feature branch cleanup: `agent-seed-v0.2.4-review-fixups` deleted.
+- Hosted CI check: `gh run list --limit 3 --json databaseId,status,conclusion,headSha,workflowName` returned `[]`, so no hosted GitHub Actions workflows existed for this repository.
+- Validation evidence: clean `main`, `git diff --check HEAD` passed, executable/prohibited-file scans were empty, stale MCP scans were empty, unresolved-text scans for active artifacts were empty.
 
 ## Acceptance Criteria
 
