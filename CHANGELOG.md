@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.4
+
+Corrected the v0.2.3 review-fix release after a follow-up review.
+
+Included:
+
+- corrected MCP authorization server endpoint guidance to require HTTPS,
+- kept localhost handling scoped to redirect URI risk controls,
+- required advertised `S256` PKCE support when the client is technically capable,
+- recorded v0.2.3 execution evidence.
+
 ## 0.2.3
 
 Corrected the v0.2.2 review-fix release after a follow-up review.
