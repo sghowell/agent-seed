@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.2.1
+
+Corrected and tightened the v0.2 guidance after review.
+
+Included:
+
+- safer quick and standard adoption instructions that copy only relevant domain overlays,
+- narrower local Aider ignore rules that preserve shared configuration,
+- current-source refresh guidance for fast-moving ecosystems, standards, APIs, security guidance, and benchmark claims,
+- MCP authorization/security checklist coverage,
+- mapping to the Five Eyes/NSA agentic AI risk taxonomy and lifecycle language,
+- updated GitHub Copilot adapter guidance for repository, path-specific, and agent instructions.
+
 ## 0.2.0
 
 Expanded `agent-seed` from a compact generic seed into a layered high-rigor guidance set.
