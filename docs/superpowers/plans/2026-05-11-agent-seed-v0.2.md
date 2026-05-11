@@ -38,7 +38,7 @@ Use these sources and current repo files as the v0.2 source of truth:
   - OWASP Agentic Skills Top 10: https://owasp.org/www-project-agentic-skills-top-10/
   - NIST AI RMF and GenAI profile: https://www.nist.gov/itl/ai-risk-management-framework and https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence
   - NIST SSDF and SP 800-218A for generative AI/foundation model development: https://csrc.nist.gov/projects/ssdf and https://csrc.nist.gov/pubs/sp/800/218/a/final
-  - MCP authorization/security model: https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization
+  - MCP authorization/security model: https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization
   - OpenSSF Scorecard and SLSA: https://openssf.org/projects/scorecard/ and https://openssf.org/projects/slsa/
   - Hugging Face model cards and dataset cards: https://huggingface.co/docs/hub/en/model-cards and https://huggingface.co/docs/datasets/v2.19.0/en/dataset_card
   - MLCommons MLPerf Inference v6.0: https://mlcommons.org/2026/04/mlperf-inference-v6-0-results/

@@ -865,17 +865,17 @@ Expected:
 - No package/build/CI/tooling files.
 - No vendor-specific bridge files are added to the seed.
 
-- [ ] **Step 3: Placeholder scan**
+- [ ] **Step 3: Unresolved text scan**
 
 Run:
 
 ```bash
-rg -n "TBD|TODO|FIXME|lorem|placeholder" README.md ADOPTION.md AGENTS.md .agent
+rg -n "T[B]D|T[O]DO|F[I]XME|lo[r]em" README.md ADOPTION.md AGENTS.md .agent
 ```
 
 Expected:
 
-- No accidental placeholders in guidance files.
+- No accidental unresolved planning text in guidance files.
 - Existing template fields are acceptable when they are intentional form fields.
 
 - [ ] **Step 4: Version and changelog check**

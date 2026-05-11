@@ -406,17 +406,13 @@ git commit -m "Clarify adapter and bridge wording"
 
 - [ ] **Step 1: Update MCP source reference**
 
-In `docs/superpowers/plans/2026-05-11-agent-seed-v0.2.1-review-fixes.md`, replace:
-
-```text
-- MCP authorization specification: https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization
-```
-
-with:
+In `docs/superpowers/plans/2026-05-11-agent-seed-v0.2.1-review-fixes.md`, replace the stale MCP authorization reference from the previous June 2025 spec URL with:
 
 ```text
 - MCP authorization latest specification, version `2025-11-25`: https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization
 ```
+
+Do not leave the old dated MCP authorization URL in any active plan artifact.
 
 - [ ] **Step 2: Fix Copilot validation quoting**
 
@@ -451,7 +447,7 @@ rg -n 'does not copy domain overlays|do not copy every overlay|\\.aider\\.conf\\
 Run:
 
 ```bash
-rg -n "2025-06-18|rg -n \"GitHub Copilot|rg -n \"does not copy domain overlays" docs/superpowers/plans/2026-05-11-agent-seed-v0.2.1-review-fixes.md
+rg -n "2025-0[6]-18|rg -n \"GitHub Copilot|rg -n \"does not copy domain overlays" docs/superpowers/plans/2026-05-11-agent-seed-v0.2.1-review-fixes.md
 rg -n "2025-11-25|rg -n 'GitHub Copilot|rg -n 'does not copy domain overlays" docs/superpowers/plans/2026-05-11-agent-seed-v0.2.1-review-fixes.md
 git diff --check
 ```
@@ -496,7 +492,7 @@ Expected:
 Run:
 
 ```bash
-rg -n "2025-06-18|modelcontextprotocol.io/specification/2025-06-18" README.md ADOPTION.md AGENTS.md .agent docs/superpowers/plans
+rg -n "2025-0[6]-18|modelcontextprotocol.io/specification/2025-0[6]-18" README.md ADOPTION.md AGENTS.md .agent docs/superpowers/plans
 ```
 
 Expected:
@@ -645,7 +641,7 @@ v0.2.2 is complete when:
 - `.agent/PROMPTS.md` asks for current-source refresh before agentic threat modeling and latest-spec MCP authorization review.
 - `ADOPTION.md` distinguishes `AGENTS.md` source-of-truth instruction files from vendor-specific bridge files.
 - `.agent/ADAPTERS.md` keeps Copilot guidance accurate without implying `CLAUDE.md` or `GEMINI.md` are generic Copilot defaults.
-- The v0.2.1 plan artifact no longer references the stale MCP `2025-06-18` authorization spec.
+- The v0.2.1 plan artifact no longer references the stale June 2025 MCP authorization spec.
 - The v0.2.1 plan artifact uses `zsh`-safe single-quoted `rg` commands where patterns include backticked text.
 - No executable, package, build, CI, lockfile, generated-doc, or vendor-specific root bridge files are added.
 - Final validation passes on merged `main`.
