@@ -215,19 +215,21 @@ If an overlay does not apply, do not copy it just because it exists.
 
 ### 6. Select Adapter Files
 
-Use `.agent/ADAPTERS.md` to decide whether the target repository needs vendor-specific bridge files.
+Use `.agent/ADAPTERS.md` to decide which instruction surfaces the target repository needs.
 
-Do not add vendor-specific files to the seed by default. In target repositories, add bridge files only when maintainers use that ecosystem and can keep them synchronized.
+Keep `AGENTS.md` and nested `AGENTS.md` files as source-of-truth agent instructions when the ecosystem supports them. Add vendor-specific bridge files only when maintainers use that ecosystem and can keep the bridge synchronized.
 
-Common bridge files include:
+Common source-of-truth and bridge surfaces include:
 
-- `CLAUDE.md` for Claude Code,
-- `GEMINI.md` for Gemini CLI,
-- `AGENTS.md`, nested `AGENTS.md`, `.github/copilot-instructions.md`, and `.github/instructions/*.instructions.md` for GitHub Copilot,
+- `AGENTS.md` and nested `AGENTS.md` files for GitHub Copilot agent instructions and other compatible agents,
+- `.github/copilot-instructions.md` for Copilot-specific repository-wide instructions,
+- `.github/instructions/*.instructions.md` for Copilot path-specific instructions,
+- `CLAUDE.md` for Claude Code bridge guidance,
+- `GEMINI.md` for Gemini CLI bridge guidance,
 - Cursor project rules,
 - `.aider.conf.yml` for shared Aider read-file configuration.
 
-Bridge files should point back to `AGENTS.md` and `.agent/`, not fork policy into inconsistent copies.
+Vendor-specific bridge files should point back to `AGENTS.md` and `.agent/`, not fork policy into inconsistent copies.
 
 ### 7. Add Nested Guidance For Monorepos
 

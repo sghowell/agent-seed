@@ -84,7 +84,7 @@ Recommended default:
 - use `AGENTS.md` and nested `AGENTS.md` files for agent instructions,
 - use `.github/copilot-instructions.md` only when the repository needs Copilot-specific repository-wide instructions,
 - use `.github/instructions/*.instructions.md` only for path-specific Copilot behavior that cannot be expressed cleanly through nested `AGENTS.md`,
-- keep `CLAUDE.md` and `GEMINI.md` as optional bridges for ecosystems that require those names.
+- use root `CLAUDE.md` or `GEMINI.md` only as a Copilot-recognized single-file alternative when maintainers deliberately choose that bridge instead of `AGENTS.md`.
 
 Recommended bridge pattern:
 
