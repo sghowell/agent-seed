@@ -54,12 +54,21 @@ Tool or MCP server: <scope and permissions>
 
 ```text
 HTTP-based MCP involved: <yes/no>
-Authorization spec version: <version/date or not applicable>
-Resource indicator: <intended MCP server resource or not applicable>
+MCP authorization spec version checked: <version/date or not applicable>
+Transport credential model: <HTTP authorization | STDIO environment credentials | other approved mechanism | not applicable>
+Protected resource metadata discovery: <WWW-Authenticate resource_metadata | well-known URI | both | not applicable>
+Authorization server discovery: <OAuth metadata | OpenID Connect discovery | both | not applicable>
+Client registration approach: <pre-registered | Client ID Metadata Document | Dynamic Client Registration | user-provided | not applicable>
+Client ID Metadata Document validation: <validation plan or not applicable>
+Requested scopes: <scopes and least-privilege rationale or not applicable>
+Scope challenge and step-up handling: <handling plan or not applicable>
+Resource indicator: <canonical MCP server resource or not applicable>
+Token transport: <Authorization header every request | not applicable>
 Token audience validation: <validation plan or not applicable>
 Token passthrough prevented: <yes/no/not applicable>
-PKCE required: <yes/no/not applicable>
-Redirect URI policy: <exact HTTPS/localhost policy or not applicable>
+Authorization error handling: <401/403/insufficient_scope handling or not applicable>
+PKCE and redirect URI policy: <PKCE and exact redirect URI policy or not applicable>
+Trust policy: <trusted authorization servers, clients, metadata documents, redirect URIs, scopes>
 Token storage and logging controls: <controls>
 ```
 

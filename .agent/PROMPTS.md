@@ -97,7 +97,7 @@ Review this MCP server, tool, skill, hook, plugin, or agent adapter as executabl
 ## 16. MCP Authorization Review
 
 ```text
-Use .agent/SECURITY.md and .agent/TEMPLATES/THREAT_MODEL.md. Review this MCP integration for resource indicators, audience-bound tokens, token passthrough prevention, authorization-header token use, metadata discovery, PKCE, exact redirect URI handling, HTTPS or localhost redirect constraints, token storage, token logging, and scoped credentials. Findings first, ordered by severity.
+Use .agent/SECURITY.md and .agent/TEMPLATES/THREAT_MODEL.md. Review this MCP integration against the latest MCP authorization specification. Verify transport applicability, protected resource metadata discovery, authorization server discovery, client registration approach, Client ID Metadata Document handling, scope selection, scope challenges, runtime insufficient-scope handling, resource indicators, token audience binding, token passthrough prevention, authorization-header token use, authorization-code protections, PKCE, exact redirect URI handling, localhost redirect constraints, trust policy, token storage, token logging, and scoped credentials. Findings first, ordered by severity.
 ```
 
 ## 17. Agentic Risk Taxonomy Mapping

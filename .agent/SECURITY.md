@@ -89,20 +89,31 @@ When using tool or MCP-style integrations:
 
 ### MCP Authorization Checklist
 
-For HTTP-based MCP servers and clients, verify:
+For HTTP-based MCP servers and clients, verify against the current MCP authorization specification. As of May 11, 2026, the latest MCP authorization specification is `2025-11-25`.
 
-- authorization follows the current MCP authorization specification when supported,
-- resource indicators identify the intended MCP server,
-- access tokens are audience-bound to the MCP server that receives them,
-- MCP servers reject tokens issued for other resources,
-- tokens are not passed through to downstream services,
-- access tokens are sent in authorization headers rather than URI query strings,
-- authorization and protected-resource metadata discovery are handled deliberately,
-- PKCE protects authorization-code flows,
-- redirect URIs are exact-registered and limited to HTTPS or localhost,
-- refresh tokens and stored credentials are protected and rotated where supported,
-- invalid or expired tokens receive the expected authorization failure response,
-- logs, traces, screenshots, and final summaries do not expose tokens.
+Verify:
+
+- authorization is treated as optional for MCP, but HTTP-based implementations that support authorization follow the current MCP authorization specification,
+- STDIO transports do not use the HTTP authorization flow and instead retrieve credentials from the environment or another approved local mechanism,
+- MCP servers expose OAuth 2.0 Protected Resource Metadata and clients use it for authorization-server discovery,
+- `WWW-Authenticate` responses include `resource_metadata` when required and include scope guidance when the server can provide it,
+- clients support both protected-resource metadata discovery mechanisms: `WWW-Authenticate` `resource_metadata` and well-known protected-resource metadata URIs,
+- authorization-server discovery supports both OAuth 2.0 Authorization Server Metadata and OpenID Connect Discovery,
+- client registration uses the right approach for the deployment: pre-registration, OAuth Client ID Metadata Documents, Dynamic Client Registration fallback, or explicit user-provided client information,
+- Client ID Metadata Documents, when used, are HTTPS URLs with path components, contain required client metadata, match `client_id` exactly, validate redirect URIs, and are fetched, cached, and validated deliberately,
+- clients request the minimum required scopes and handle scope challenges from `WWW-Authenticate` responses as authoritative for the current request,
+- clients can handle runtime insufficient-scope responses, including `403` errors with `insufficient_scope`, `scope`, and `resource_metadata` when provided,
+- clients include the OAuth Resource Indicators `resource` parameter in both authorization requests and token requests,
+- the resource indicator identifies the intended MCP server using a canonical server URI,
+- access tokens are sent in authorization headers for every HTTP request and are never sent in URI query strings,
+- MCP servers validate that access tokens were issued for that server as the intended audience,
+- MCP servers reject invalid, expired, wrong-audience, or insufficient-scope tokens with the expected authorization failure response,
+- MCP servers do not accept, forward, or pass through tokens issued for other resources,
+- authorization-code flows use PKCE and exact redirect URI validation according to the current OAuth and MCP requirements,
+- localhost redirect URIs are restricted to local development use and reviewed for interception risk,
+- trust policies define which authorization servers, clients, metadata documents, redirect URIs, and scopes are acceptable,
+- refresh tokens, stored credentials, and client credentials are protected, scoped, rotated, and revoked where supported,
+- logs, traces, screenshots, benchmark artifacts, and final summaries do not expose tokens, codes, client secrets, refresh tokens, private keys, or authorization metadata that would enable misuse.
 
 ## Secrets And Sensitive Files
 
