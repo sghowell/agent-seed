@@ -39,3 +39,8 @@ dist/
 build/
 out/
 target/
+
+# Local agent tool state
+.claude/settings.local.json
+.gemini/.cache/
+.aider*

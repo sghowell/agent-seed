@@ -1,4 +1,4 @@
-# Local repository context
+# Local Repository Context
 
 Copy this file to:
 
@@ -10,16 +10,17 @@ Then replace the placeholders with facts about the target repository.
 
 Do not invent commands or conventions. Mark unknowns clearly.
 
-## Project summary
+## Project Summary
 
 ```text
 Project name: <fill in>
 Purpose: <fill in>
 Primary users: <fill in>
 Current maturity: <prototype | internal tool | production | research | unknown>
+Quality bar level: <minimal | standard | high-rigor | safety-critical | unknown>
 ```
 
-## Repository structure
+## Repository Structure
 
 Describe the major directories and files.
 
@@ -29,7 +30,41 @@ Describe the major directories and files.
 <directory or file>: <purpose>
 ```
 
-## Canonical commands
+## Active Domain Overlays
+
+List overlays copied or adopted from `.agent/DOMAINS/`.
+
+```text
+Active domain overlays:
+- <overlay>: <why it applies and what it covers>
+- <overlay>: <why it applies and what it covers>
+
+Deferred overlays:
+- <overlay>: <why it does not currently apply>
+```
+
+## Specialist Review Lanes
+
+```text
+Required lanes:
+- <lane>: <trigger>
+- <lane>: <trigger>
+
+Optional lanes:
+- <lane>: <when useful>
+```
+
+## Agent And Tool Permission Boundaries
+
+```text
+Allowed without approval: <commands, tools, paths, or actions>
+Requires approval: <destructive, external, production, credential, privacy, safety, or financial actions>
+Denied: <files, tools, commands, paths, networks, or actions>
+Agent/tool identity: <what identity agents use, if any>
+MCP/tool servers: <approved servers and scope>
+```
+
+## Canonical Commands
 
 Use real commands only.
 
@@ -46,9 +81,12 @@ All checks:        <command or not defined>
 Docs:              <command or not defined>
 Benchmarks:        <command or not defined>
 Build/package:     <command or not defined>
+Security checks:   <command or not defined>
+Formal checks:     <command or not defined>
+Hardware checks:   <command or not defined>
 ```
 
-## Main modules
+## Main Modules
 
 ```text
 <module>: <responsibility>
@@ -56,7 +94,7 @@ Build/package:     <command or not defined>
 <module>: <responsibility>
 ```
 
-## Architecture notes
+## Architecture Notes
 
 Summarize important architecture facts.
 
@@ -64,7 +102,7 @@ Summarize important architecture facts.
 <fill in>
 ```
 
-## Data flow
+## Data Flow
 
 Describe important data flow, request flow, or execution flow.
 
@@ -72,7 +110,40 @@ Describe important data flow, request flow, or execution flow.
 <fill in>
 ```
 
-## Public interfaces
+## Data, Model, And Artifact Governance
+
+```text
+Data sources: <fill in or none known>
+Data licenses: <fill in or none known>
+Model artifacts: <fill in or none known>
+Generated artifacts: <fill in or none known>
+Retention policy: <fill in or not defined>
+Privacy constraints: <fill in or none known>
+Reproducibility requirements: <fill in or not defined>
+```
+
+## Hardware And Runtime Environments
+
+```text
+Supported operating systems: <fill in>
+CPU architectures: <fill in>
+GPU/accelerator hardware: <fill in or none known>
+Drivers/firmware/runtime: <fill in or none known>
+Distributed/runtime topology: <fill in or none known>
+Simulation environments: <fill in or none known>
+Hardware/runtime environments: <fill in or none known>
+```
+
+## Safety-Sensitive Operations
+
+```text
+Safety-sensitive operations: <operations or none known>
+Approval required before: <operations>
+Operator override or rollback: <mechanism or not defined>
+Field-test or production admission: <criteria or not defined>
+```
+
+## Public Interfaces
 
 List interfaces that require compatibility care.
 
@@ -84,9 +155,11 @@ Schemas: <fill in or none known>
 File formats: <fill in or none known>
 Environment variables: <fill in or none known>
 External integrations: <fill in or none known>
+Model/data artifacts: <fill in or none known>
+Hardware interfaces: <fill in or none known>
 ```
 
-## Testing conventions
+## Testing Conventions
 
 Describe how tests are organized and what kinds of tests are expected.
 
@@ -94,7 +167,7 @@ Describe how tests are organized and what kinds of tests are expected.
 <fill in>
 ```
 
-## Documentation conventions
+## Documentation Conventions
 
 Describe documentation locations and expectations.
 
@@ -102,7 +175,7 @@ Describe documentation locations and expectations.
 <fill in>
 ```
 
-## Style conventions
+## Style Conventions
 
 Describe naming, formatting, error handling, logging, and other local style expectations.
 
@@ -110,7 +183,7 @@ Describe naming, formatting, error handling, logging, and other local style expe
 <fill in>
 ```
 
-## Dependency conventions
+## Dependency Conventions
 
 Describe dependency policy.
 
@@ -118,7 +191,7 @@ Describe dependency policy.
 <fill in>
 ```
 
-## Risky areas
+## Risky Areas
 
 List files, modules, or behaviors that require extra care.
 
@@ -128,21 +201,21 @@ List files, modules, or behaviors that require extra care.
 <area>: <reason>
 ```
 
-## Performance-sensitive areas
+## Performance-Sensitive Areas
 
 ```text
 <area>: <reason and relevant benchmark, if known>
 <area>: <reason and relevant benchmark, if known>
 ```
 
-## Security-sensitive areas
+## Security-Sensitive Areas
 
 ```text
 <area>: <reason>
 <area>: <reason>
 ```
 
-## Generated, vendored, or external files
+## Generated, Vendored, Or External Files
 
 List files that agents should avoid editing directly.
 
@@ -151,20 +224,20 @@ List files that agents should avoid editing directly.
 <path>: <how it is generated or maintained>
 ```
 
-## Release or deployment notes
+## Release Or Deployment Notes
 
 ```text
 <fill in>
 ```
 
-## Known pitfalls
+## Known Pitfalls
 
 ```text
 <pitfall>: <how to avoid it>
 <pitfall>: <how to avoid it>
 ```
 
-## Open questions
+## Open Questions
 
 Track missing local context that should be filled in later.
 

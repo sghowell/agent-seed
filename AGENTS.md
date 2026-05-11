@@ -1,10 +1,10 @@
 # AGENTS.md
 
-This repository is intended to be maintained with high engineering standards. Coding agents should optimize for correctness, clarity, maintainability, testability, and minimal unnecessary churn.
+This repository is intended to be maintained with high engineering and scientific standards. Coding agents should optimize for correctness, clarity, maintainability, testability, evidence, safety, and minimal unnecessary churn.
 
-This file is the first operating guide for agents working in the repository. For more detailed guidance, see the files in `.agent/`.
+This file is the compact operating guide for agents working in the repository. For detailed guidance, see the files in `.agent/`.
 
-## Core operating principles
+## Core Operating Principles
 
 - Understand before editing.
 - Prefer narrow, reviewable changes.
@@ -16,8 +16,11 @@ This file is the first operating guide for agents working in the repository. For
 - Do not introduce dependencies without a clear reason.
 - Do not perform broad rewrites unless the task explicitly requires one.
 - Be explicit about assumptions, validation, uncertainty, and remaining risk.
+- Treat `.agent/QUALITY_BAR.md` as the standard for high-rigor work; generic guidance is a floor, not a ceiling.
+- Treat `.agent/SECURITY.md` as required context for agentic AI, tool, data, identity, or supply-chain-sensitive work.
+- Use `.agent/REVIEW_PROTOCOL.md` when work needs specialist, adversarial, subagent, or integration review.
 
-## Read first
+## Read First
 
 Before non-trivial edits, inspect the relevant local context:
 
@@ -27,6 +30,10 @@ README.md
 .agent/WORKFLOW.md
 .agent/STANDARDS.md
 .agent/DONE.md
+.agent/QUALITY_BAR.md, for high-rigor work
+.agent/SECURITY.md, for security-sensitive work
+.agent/REVIEW_PROTOCOL.md, for high-risk review planning
+selected .agent/DOMAINS/* overlays, when active
 relevant source files
 relevant tests
 relevant docs or examples
@@ -34,27 +41,27 @@ relevant docs or examples
 
 When `.agent/LOCAL_CONTEXT.md` is missing, infer local conventions from the repository and recommend creating it.
 
-## Canonical commands
+## Canonical Commands
 
 Project maintainers should replace this section with real commands for the repository.
 
 Do not invent commands. Use only commands that exist or are clearly documented in the target repository.
 
 ```text
-Setup:            <fill in, or state not defined>
-Format:           <fill in, or state not defined>
-Lint:             <fill in, or state not defined>
-Type check:       <fill in, or state not defined>
-Unit tests:       <fill in, or state not defined>
-Integration tests:<fill in, or state not defined>
-All checks:       <fill in, or state not defined>
-Docs:             <fill in, or state not defined>
-Benchmarks:       <fill in, or state not defined>
+Setup:             not defined
+Format:            not defined
+Lint:              not defined
+Type check:        not defined
+Unit tests:        not defined
+Integration tests: not defined
+All checks:        not defined
+Docs:              not defined
+Benchmarks:        not defined
 ```
 
 When commands are not documented, inspect the repository for likely commands before asking the user.
 
-## Before editing
+## Before Editing
 
 For non-trivial tasks:
 
@@ -64,9 +71,9 @@ For non-trivial tasks:
 4. Identify likely risks.
 5. Decide whether a plan is needed.
 
-Do not start with code changes when the task requires architectural judgment, touches many files, changes public behavior, alters data formats, affects performance-sensitive paths, or modifies security-sensitive logic.
+Do not start with code changes when the task requires architectural judgment, touches many files, changes public behavior, alters data formats, affects performance-sensitive paths, modifies security-sensitive logic, or spans active domain overlays.
 
-## When to write a plan first
+## When To Write A Plan First
 
 Write a short plan before editing when the task involves any of the following:
 
@@ -76,6 +83,7 @@ Write a short plan before editing when the task involves any of the following:
 - migrations,
 - authentication or authorization,
 - security-sensitive code,
+- agent/tool/MCP/autonomy behavior,
 - performance-sensitive code,
 - concurrency or distributed systems behavior,
 - build, packaging, or deployment changes,
@@ -87,7 +95,7 @@ Use `.agent/TEMPLATES/EXEC_PLAN.md` for substantial work.
 
 For small, localized changes, a brief inline plan is enough.
 
-## While editing
+## While Editing
 
 - Keep the diff focused on the task.
 - Reuse existing patterns before introducing new ones.
@@ -98,7 +106,7 @@ For small, localized changes, a brief inline plan is enough.
 - Avoid speculative abstractions.
 - Treat generated files, vendored files, migrations, and lockfiles carefully.
 
-## Testing and validation
+## Testing And Validation
 
 Before finalizing, run the most relevant checks available in the repository.
 
@@ -111,7 +119,8 @@ At minimum, consider:
 - type checking,
 - documentation checks,
 - benchmarks for performance-sensitive changes,
-- security or dependency checks for sensitive changes.
+- security or dependency checks for sensitive changes,
+- specialist review for high-risk domains.
 
 Never claim that a check passed unless it was actually run and passed.
 
@@ -122,7 +131,7 @@ When a check cannot be run, state:
 - what validation was performed instead,
 - and what risk remains.
 
-## Definition of done
+## Definition Of Done
 
 A change is done only when:
 
@@ -134,11 +143,12 @@ A change is done only when:
 - compatibility and migration issues are considered,
 - performance-sensitive changes are measured or explicitly scoped,
 - security-sensitive changes are reviewed carefully,
+- specialist or adversarial review is completed or explicitly deferred for high-risk work,
 - and remaining risks are stated clearly.
 
 See `.agent/DONE.md` for the fuller checklist.
 
-## Final response format
+## Final Response Format
 
 After code changes, final responses should include:
 
@@ -155,7 +165,7 @@ Notes:
 
 Keep the final response concise but specific. Include exact validation commands when available.
 
-## Prohibited shortcuts
+## Prohibited Shortcuts
 
 Do not:
 
@@ -168,14 +178,21 @@ Do not:
 - introduce dependencies casually,
 - change public behavior silently,
 - delete documentation because it is stale instead of updating it,
+- delegate accountability for destructive, production, credential, legal, privacy, or safety decisions,
 - or treat this guidance as a substitute for local repository facts.
 
-## Useful supporting files
+## Useful Supporting Files
 
 ```text
 .agent/WORKFLOW.md                  Step-by-step workflow for substantial changes.
 .agent/STANDARDS.md                 Engineering standards.
 .agent/DONE.md                      Definition of done.
+.agent/QUALITY_BAR.md               Highest-standard engineering and scientific expectations.
+.agent/SECURITY.md                  Agentic AI, tool, data, and supply-chain security.
+.agent/ADAPTERS.md                  Adapting guidance to Codex, Claude, Gemini, Copilot, Cursor, Aider, and generic agents.
+.agent/REVIEW_PROTOCOL.md           Self-review, specialist review, adversarial review, and integration review.
+.agent/NESTED_GUIDANCE.md           Monorepo and nested instruction guidance.
+.agent/DOMAINS/                     Optional domain overlays.
 .agent/PROMPTS.md                   Reusable prompts.
 .agent/LOCAL_CONTEXT.md             Repository-specific context, when present.
 .agent/TEMPLATES/EXEC_PLAN.md       Plan template.

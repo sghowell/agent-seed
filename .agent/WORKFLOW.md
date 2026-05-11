@@ -1,23 +1,25 @@
-# Agent workflow
+# Agent Workflow
 
 This workflow guides coding agents through safe, reviewable work.
 
 Use the full workflow for substantial changes. For tiny changes, use the same principles in a lighter form.
 
-## Workflow summary
+## Workflow Summary
 
 ```text
 1. Understand the task.
 2. Inspect the repository.
 3. Identify the smallest safe change.
 4. Plan when risk warrants planning.
-5. Implement narrowly.
-6. Validate with relevant checks.
-7. Review the diff.
-8. Summarize honestly.
+5. Model security and safety risk when relevant.
+6. Implement narrowly.
+7. Validate with relevant checks.
+8. Review the diff.
+9. Request specialist review when risk warrants it.
+10. Summarize honestly.
 ```
 
-## 1. Understand the task
+## 1. Understand The Task
 
 Before editing, clarify the actual objective.
 
@@ -28,11 +30,13 @@ Identify:
 - implicit constraints from the repository,
 - likely affected files,
 - expected behavior change,
+- active domain overlays,
+- security, privacy, safety, performance, or scientific risks,
 - and what would count as success.
 
 When the task is ambiguous but progress is still possible, make a reasonable assumption, state it, and proceed carefully. Ask for clarification only when the ambiguity blocks safe progress.
 
-## 2. Inspect the repository
+## 2. Inspect The Repository
 
 Before changing code, inspect enough context to avoid accidental damage.
 
@@ -40,6 +44,8 @@ Look for:
 
 - README or onboarding docs,
 - local agent guidance,
+- `.agent/LOCAL_CONTEXT.md`,
+- active domain overlays,
 - package or build files,
 - existing tests,
 - examples,
@@ -53,7 +59,7 @@ Look for:
 
 Do not assume a convention before checking whether the repository already has one.
 
-## 3. Identify the smallest safe change
+## 3. Identify The Smallest Safe Change
 
 Prefer the smallest coherent change that solves the task.
 
@@ -74,7 +80,7 @@ Avoid:
 - unnecessary file moves,
 - and changes to unrelated behavior.
 
-## 4. Decide whether to plan first
+## 4. Decide Whether To Plan First
 
 A plan is required when the change is substantial or risky.
 
@@ -88,6 +94,7 @@ Use a plan for:
 - migrations,
 - performance-sensitive changes,
 - security-sensitive changes,
+- agent/tool/MCP/autonomy changes,
 - concurrency changes,
 - build or deployment changes,
 - unclear requirements,
@@ -102,14 +109,42 @@ A plan should include:
 - current state,
 - proposed approach,
 - affected files,
+- domain overlays,
 - validation strategy,
+- security or safety model when relevant,
+- specialist review plan,
 - risks,
 - rollback or mitigation approach,
 - and open questions.
 
 For a small localized change, a short inline plan is sufficient.
 
-## 5. Implement narrowly
+## 5. Model Security And Safety Risk
+
+For agent, MCP/tool, identity, secrets, network, sandbox, data, model, privacy, physical-world, or production-adjacent changes, create or update a threat model before implementation.
+
+Use `.agent/SECURITY.md` and `.agent/TEMPLATES/THREAT_MODEL.md`.
+
+Security-sensitive work should identify:
+
+- assets,
+- trust boundaries,
+- actors and identities,
+- tools and permissions,
+- untrusted inputs,
+- prompt-injection or goal-hijack risks,
+- memory or context poisoning risks,
+- data exfiltration paths,
+- secrets and privacy risks,
+- supply-chain provenance,
+- approval boundaries,
+- mitigations,
+- validation,
+- residual risk.
+
+Request specialist or adversarial review when the change is high-risk.
+
+## 6. Implement Narrowly
 
 During implementation:
 
@@ -120,11 +155,12 @@ During implementation:
 - update nearby tests,
 - update docs when usage or behavior changes,
 - avoid adding dependencies unless clearly justified,
+- preserve security, privacy, and safety boundaries,
 - and keep the working tree understandable.
 
 When a discovered issue is outside the task, note it separately instead of fixing it opportunistically.
 
-## 6. Validate
+## 7. Validate
 
 Run the most relevant available checks.
 
@@ -141,20 +177,26 @@ Possible checks include:
 - security checks,
 - dependency checks,
 - migration checks,
-- smoke tests.
+- smoke tests,
+- fuzzing or property tests,
+- formal checks,
+- browser or visual checks,
+- simulation or hardware checks.
 
 Choose checks based on risk and scope.
 
 For example:
 
-- A one-line documentation change may only require a markdown or docs check.
-- A parser change may require unit tests, edge-case tests, and possibly fuzz or property tests.
+- A one-line documentation change may only require inspection or a docs check.
+- A parser change may require unit tests, negative tests, and fuzz or property tests.
 - A performance change may require a benchmark before and after.
-- A security-sensitive change may require additional review and targeted abuse cases.
+- A security-sensitive change may require threat modeling, abuse cases, and adversarial review.
+- A robotics or autonomy change may require simulation evidence and explicit approval before hardware or field use.
+- An AI/ML change may require dataset, model, eval, and reproducibility evidence.
 
 Never claim a check passed unless it was actually run and passed.
 
-## 7. Review the diff
+## 8. Review The Diff
 
 Before finalizing, review the diff as if reviewing another engineer's work.
 
@@ -172,11 +214,33 @@ Check for:
 - security regressions,
 - confusing names,
 - dead code,
-- and incomplete cleanup.
+- incomplete cleanup,
+- incomplete evidence,
+- and unresolved review findings.
 
 Use `.agent/TEMPLATES/REVIEW.md` for a structured review.
 
-## 8. Summarize honestly
+## 9. Request Specialist Review When Needed
+
+Use `.agent/REVIEW_PROTOCOL.md` for review lanes, reviewer instructions, and disagreement handling.
+
+Specialist review is triggered by:
+
+- security-sensitive code,
+- agent/tool/MCP/autonomy changes,
+- AI/ML model, data, training, inference, or eval work,
+- kernel, unsafe, driver, firmware, or low-level systems work,
+- concurrency or distributed systems behavior,
+- accelerator, hardware, or performance-sensitive kernels,
+- compiler, language, runtime, or semantic changes,
+- formal proof, theorem, or model-checking work,
+- robotics, actuation, autonomy, or safety work,
+- user-facing frontend workflow or accessibility changes,
+- broad documentation or source-of-truth rewrites.
+
+If specialist review is not available, record the gap and compensate with stronger local evidence where practical.
+
+## 10. Summarize Honestly
 
 Final summaries should be brief but evidence-based.
 
@@ -186,11 +250,12 @@ Include:
 - why it changed,
 - what validation was run,
 - what failed or could not be run,
+- what review was performed or deferred,
 - and what risks remain.
 
 Do not overstate certainty. Do not hide failures. Do not imply that unrun checks passed.
 
-## Handling failures
+## Handling Failures
 
 When validation fails:
 
@@ -202,7 +267,7 @@ When validation fails:
 
 Do not weaken checks or tests to make failures disappear.
 
-## Handling uncertainty
+## Handling Uncertainty
 
 When unsure:
 
@@ -210,11 +275,12 @@ When unsure:
 - prefer reversible changes,
 - make assumptions explicit,
 - choose narrower changes,
-- and identify validation that would reduce uncertainty.
+- identify validation that would reduce uncertainty,
+- and label unvalidated claims as assumptions.
 
-When uncertainty affects correctness or safety, state it clearly.
+When uncertainty affects correctness, security, safety, or scientific validity, state it clearly.
 
-## Handling local conventions
+## Handling Local Conventions
 
 Local repository conventions take priority over generic guidance.
 
@@ -228,7 +294,7 @@ Examples:
 
 When local conventions are unclear, infer them from nearby code and mention the inference.
 
-## Handling generated, vendored, or external files
+## Handling Generated, Vendored, Or External Files
 
 Be careful with files that may not be intended for direct editing.
 
@@ -240,11 +306,13 @@ Before editing generated, vendored, or external files, look for:
 - vendor directories,
 - submodules,
 - codegen configuration,
-- schema generation tools.
+- schema generation tools,
+- model or dataset provenance,
+- license and redistribution constraints.
 
 Prefer editing the source that generates the file.
 
-## Handling dependencies
+## Handling Dependencies
 
 Before adding a dependency, consider:
 
@@ -256,13 +324,15 @@ Before adding a dependency, consider:
 - maintenance burden,
 - transitive dependencies,
 - performance impact,
-- and compatibility with existing tooling.
+- compatibility with existing tooling,
+- supply-chain provenance,
+- and whether the dependency is needed in production or only development.
 
 Document the reason for any new production dependency.
 
-## Handling documentation
+## Handling Documentation
 
-Documentation should change when user-visible behavior, APIs, architecture, setup, operations, or examples change.
+Documentation should change when user-visible behavior, APIs, architecture, setup, operations, examples, assumptions, or evidence requirements change.
 
 Documentation updates should be:
 
@@ -274,7 +344,7 @@ Documentation updates should be:
 
 Use `.agent/TEMPLATES/DOCS_UPDATE.md` for structured documentation updates.
 
-## Handling performance-sensitive changes
+## Handling Performance-Sensitive Changes
 
 For performance-sensitive work:
 
@@ -283,11 +353,13 @@ For performance-sensitive work:
 - measure after the change,
 - avoid relying only on intuition,
 - document benchmark commands and environment,
+- document workload and variance,
+- preserve correctness validation,
 - and state limitations of the measurement.
 
-Use `.agent/TEMPLATES/BENCHMARK_NOTE.md` for structured performance notes.
+Use `.agent/TEMPLATES/BENCHMARK_NOTE.md` or `.agent/TEMPLATES/HARDWARE_BENCHMARK.md` for structured performance notes.
 
-## Handling bugs
+## Handling Bugs
 
 For bug fixes:
 
