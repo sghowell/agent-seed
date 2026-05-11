@@ -70,7 +70,9 @@ HTTP-based MCP involved: <yes/no>
 MCP authorization spec version checked: <version/date or not applicable>
 Transport credential model: <HTTP authorization | STDIO environment credentials | other approved mechanism | not applicable>
 Protected resource metadata discovery: <WWW-Authenticate resource_metadata | well-known URI | both | not applicable>
+Protected resource metadata authorization_servers: <present with one server | present with multiple servers and selection policy | absent and rejected | not applicable>
 Authorization server discovery: <OAuth metadata | OpenID Connect discovery | both | not applicable>
+Authorization server endpoint security: <HTTPS endpoints | approved local-development endpoint | not applicable>
 Client registration approach: <pre-registered | Client ID Metadata Document | Dynamic Client Registration | user-provided | not applicable>
 Client ID Metadata Document validation: <validation plan or not applicable>
 Requested scopes: <scopes and least-privilege rationale or not applicable>
@@ -80,8 +82,12 @@ Token transport: <Authorization header every request | not applicable>
 Token audience validation: <validation plan or not applicable>
 Token passthrough prevented: <yes/no/not applicable>
 Authorization error handling: <401/403/insufficient_scope handling or not applicable>
-PKCE and redirect URI policy: <PKCE and exact redirect URI policy or not applicable>
-Trust policy: <trusted authorization servers, clients, metadata documents, redirect URIs, scopes>
+PKCE support discovery: <code_challenge_methods_supported metadata source and refusal behavior or not applicable>
+PKCE method: <S256 | other with justification | not applicable>
+Authorization state binding: <state generation, storage, verification, and mismatch handling or not applicable>
+Redirect URI policy: <exact registered redirect URI policy, HTTPS/localhost constraints, and open-redirect prevention or not applicable>
+Localhost redirect risk controls: <development-only constraint, warning, attestation, or not applicable>
+Trust policy: <trusted authorization servers, clients, metadata documents, redirect URIs, redirect destinations, scopes>
 Token storage and logging controls: <controls>
 ```
 

@@ -96,9 +96,12 @@ Verify:
 - authorization is treated as optional for MCP, but HTTP-based implementations that support authorization follow the current MCP authorization specification,
 - STDIO transports do not use the HTTP authorization flow and instead retrieve credentials from the environment or another approved local mechanism,
 - MCP servers expose OAuth 2.0 Protected Resource Metadata and clients use it for authorization-server discovery,
+- protected resource metadata includes `authorization_servers` with at least one acceptable authorization server for the protected MCP resource,
+- clients document how they choose among multiple advertised `authorization_servers` and constrain that choice with the trust policy,
 - `WWW-Authenticate` responses include `resource_metadata` when required and include scope guidance when the server can provide it,
 - clients support both protected-resource metadata discovery mechanisms: `WWW-Authenticate` `resource_metadata` and well-known protected-resource metadata URIs,
 - authorization-server discovery supports both OAuth 2.0 Authorization Server Metadata and OpenID Connect Discovery,
+- authorization server endpoints use HTTPS except for explicitly approved local-development endpoints,
 - client registration uses the right approach for the deployment: pre-registration, OAuth Client ID Metadata Documents, Dynamic Client Registration fallback, or explicit user-provided client information,
 - Client ID Metadata Documents, when used, are HTTPS URLs with path components, contain required client metadata, match `client_id` exactly, validate redirect URIs, and are fetched, cached, and validated deliberately,
 - clients request the minimum required scopes and handle scope challenges from `WWW-Authenticate` responses as authoritative for the current request,
@@ -109,11 +112,16 @@ Verify:
 - MCP servers validate that access tokens were issued for that server as the intended audience,
 - MCP servers reject invalid, expired, wrong-audience, or insufficient-scope tokens with the expected authorization failure response,
 - MCP servers do not accept, forward, or pass through tokens issued for other resources,
-- authorization-code flows use PKCE and exact redirect URI validation according to the current OAuth and MCP requirements,
-- localhost redirect URIs are restricted to local development use and reviewed for interception risk,
-- trust policies define which authorization servers, clients, metadata documents, redirect URIs, and scopes are acceptable,
+- authorization-code flows verify PKCE support from authorization server metadata before proceeding,
+- clients refuse authorization when `code_challenge_methods_supported` is absent from authorization server metadata or provider metadata,
+- clients use the `S256` code challenge method when technically capable,
+- clients use state parameters in authorization-code flows and discard responses with missing or mismatched state,
+- redirect URIs are registered with the authorization server and validated by exact match,
+- redirect URI policy rejects open-redirect patterns and treats untrusted redirect destinations as authorization failures,
+- localhost redirect URIs are restricted to local development use and reviewed for interception and impersonation risk,
+- trust policies define which authorization servers, clients, metadata documents, redirect URIs, scopes, and redirect destinations are acceptable,
 - refresh tokens, stored credentials, and client credentials are protected, scoped, rotated, and revoked where supported,
-- logs, traces, screenshots, benchmark artifacts, and final summaries do not expose tokens, codes, client secrets, refresh tokens, private keys, or authorization metadata that would enable misuse.
+- logs, traces, screenshots, benchmark artifacts, and final summaries do not expose tokens, codes, client secrets, refresh tokens, private keys, state values, or authorization metadata that would enable misuse.
 
 ## Secrets And Sensitive Files
 
