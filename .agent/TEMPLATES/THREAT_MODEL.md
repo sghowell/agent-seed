@@ -72,7 +72,7 @@ Transport credential model: <HTTP authorization | STDIO environment credentials 
 Protected resource metadata discovery: <WWW-Authenticate resource_metadata | well-known URI | both | not applicable>
 Protected resource metadata authorization_servers: <present with one server | present with multiple servers and selection policy | absent and rejected | not applicable>
 Authorization server discovery: <OAuth metadata | OpenID Connect discovery | both | not applicable>
-Authorization server endpoint security: <HTTPS endpoints | approved local-development endpoint | not applicable>
+Authorization server endpoint security: <HTTPS endpoints | non-HTTPS endpoint rejected | not applicable>
 Client registration approach: <pre-registered | Client ID Metadata Document | Dynamic Client Registration | user-provided | not applicable>
 Client ID Metadata Document validation: <validation plan or not applicable>
 Requested scopes: <scopes and least-privilege rationale or not applicable>
@@ -82,7 +82,7 @@ Token transport: <Authorization header every request | not applicable>
 Token audience validation: <validation plan or not applicable>
 Token passthrough prevented: <yes/no/not applicable>
 Authorization error handling: <401/403/insufficient_scope handling or not applicable>
-PKCE support discovery: <code_challenge_methods_supported metadata source and refusal behavior or not applicable>
+PKCE support discovery: <code_challenge_methods_supported metadata source, S256 advertisement, and refusal behavior or not applicable>
 PKCE method: <S256 | other with justification | not applicable>
 Authorization state binding: <state generation, storage, verification, and mismatch handling or not applicable>
 Redirect URI policy: <exact registered redirect URI policy, HTTPS/localhost constraints, and open-redirect prevention or not applicable>

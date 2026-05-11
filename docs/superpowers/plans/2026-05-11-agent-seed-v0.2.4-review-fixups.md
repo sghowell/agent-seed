@@ -225,7 +225,7 @@ PKCE metadata discovery, advertised `S256` support, `S256` use
 Run:
 
 ```bash
-rg -n "authorization server endpoints use HTTPS; local-development exceptions apply only to redirect URIs|non-HTTPS endpoint rejected|advertises `S256`|advertised `S256` support|S256 advertisement" .agent/SECURITY.md .agent/TEMPLATES/THREAT_MODEL.md .agent/PROMPTS.md
+rg -n 'authorization server endpoints use HTTPS; local-development exceptions apply only to redirect URIs|non-HTTPS endpoint rejected|advertises `S256`|advertised `S256` support|S256 advertisement' .agent/SECURITY.md .agent/TEMPLATES/THREAT_MODEL.md .agent/PROMPTS.md
 rg -n "approved local-development endpoin[t]|authorization server endpoints use HTTPS excep[t]" .agent/SECURITY.md .agent/TEMPLATES/THREAT_MODEL.md .agent/PROMPTS.md
 git diff --check
 ```
@@ -330,7 +330,7 @@ Only change checkbox prefixes in this file. Do not change command snippets or ex
 Run:
 
 ```bash
-rg -n "0\\.2\\.4|authorization server endpoints use HTTPS; local-development exceptions apply only to redirect URIs|non-HTTPS endpoint rejected|advertises `S256`|advertised `S256` support|S256 advertisement|c31a6990529e1c8cb06d63718b7fcdd6c02ee8ed|\\[x\\]" VERSION CHANGELOG.md .agent/SECURITY.md .agent/TEMPLATES/THREAT_MODEL.md .agent/PROMPTS.md docs/superpowers/plans/2026-05-11-agent-seed-v0.2.3-review-fixups.md docs/superpowers/plans/2026-05-11-agent-seed-v0.2.4-review-fixups.md
+rg -n '0\\.2\\.4|authorization server endpoints use HTTPS; local-development exceptions apply only to redirect URIs|non-HTTPS endpoint rejected|advertises `S256`|advertised `S256` support|S256 advertisement|c31a6990529e1c8cb06d63718b7fcdd6c02ee8ed|\\[x\\]' VERSION CHANGELOG.md .agent/SECURITY.md .agent/TEMPLATES/THREAT_MODEL.md .agent/PROMPTS.md docs/superpowers/plans/2026-05-11-agent-seed-v0.2.3-review-fixups.md docs/superpowers/plans/2026-05-11-agent-seed-v0.2.4-review-fixups.md
 ```
 
 Expected:
