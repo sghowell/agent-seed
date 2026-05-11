@@ -32,6 +32,17 @@ External actors: <summary>
 Credentials used: <summary>
 ```
 
+## Agentic AI Risk Taxonomy
+
+```text
+Privilege risks:
+Design and configuration risks:
+Behavior risks:
+Structural risks:
+Accountability risks:
+Lifecycle stage: <designing | developing | managing third-party components | deploying | operating | not applicable>
+```
+
 ## Tools And Permissions
 
 ```text

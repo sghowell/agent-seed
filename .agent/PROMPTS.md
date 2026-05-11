@@ -100,193 +100,199 @@ Review this MCP server, tool, skill, hook, plugin, or agent adapter as executabl
 Use .agent/SECURITY.md and .agent/TEMPLATES/THREAT_MODEL.md. Review this MCP integration for resource indicators, audience-bound tokens, token passthrough prevention, authorization-header token use, metadata discovery, PKCE, exact redirect URI handling, HTTPS or localhost redirect constraints, token storage, token logging, and scoped credentials. Findings first, ordered by severity.
 ```
 
-## 17. Secrets And Privacy Review
+## 17. Agentic Risk Taxonomy Mapping
+
+```text
+Use .agent/SECURITY.md. Map this agentic system or change to the Five Eyes/NSA risk categories: privilege, design and configuration, behavior, structural, and accountability risks. Then map controls across designing, developing, managing third-party components, deploying, and operating. Identify missing controls and residual risk.
+```
+
+## 18. Secrets And Privacy Review
 
 ```text
 Review this change for secrets and privacy risk. Identify sensitive files, tokens, personal data, logs, URLs, screenshots, artifacts, model prompts, model outputs, and data flows. Confirm secrets are not printed or persisted and that private data stays within approved boundaries.
 ```
 
-## 18. Supply-Chain Review
+## 19. Supply-Chain Review
 
 ```text
 Review this dependency, model, dataset, binary, container, prompt pack, skill, hook, or generated artifact for supply-chain risk. Check provenance, license, version pinning, integrity, maintenance status, transitive dependencies, known vulnerabilities, and whether a safer local or existing option exists.
 ```
 
-## 19. Adversarial Security Review
+## 20. Adversarial Security Review
 
 ```text
 Use .agent/SECURITY.md and .agent/REVIEW_PROTOCOL.md. Perform an adversarial review of this change. Try to find prompt-injection paths, data exfiltration paths, privilege escalation, confused-deputy behavior, unsafe tool chains, missing approval gates, weak audit evidence, and residual risk. Findings first, ordered by severity.
 ```
 
-## 20. Specialist Review
+## 21. Specialist Review
 
 ```text
 Use .agent/REVIEW_PROTOCOL.md and .agent/TEMPLATES/SPECIALIST_REVIEW.md. Perform a specialist review for the requested lane. Inspect source-of-truth files, the diff or artifacts, validation evidence, and known risks. Return findings first, blocking issues, non-blocking issues, evidence gaps, final recommendation, and reviewer uncertainty.
 ```
 
-## 21. Integration Review
+## 22. Integration Review
 
 ```text
 Use .agent/REVIEW_PROTOCOL.md. Review this multi-file or multi-domain change for integration risk. Check that source-of-truth docs agree, templates and guidance reference each other correctly, validation covers the whole change, no incompatible assumptions remain, and final accountability is clear.
 ```
 
-## 22. Resolve Review Disagreement
+## 23. Resolve Review Disagreement
 
 ```text
 Use .agent/REVIEW_PROTOCOL.md. Two reviewers disagree. Preserve both positions, identify the evidence behind each, identify what evidence would resolve the disagreement, apply the stricter safety/security/correctness position until a maintainer decides, and record any accepted risk.
 ```
 
-## 23. Create Adapter Guidance
+## 24. Create Adapter Guidance
 
 ```text
 Use .agent/ADAPTERS.md. Audit which agent ecosystems this repository actually uses. Recommend minimal bridge files for Codex/OpenAI, Claude Code, Gemini CLI, GitHub Copilot, Cursor, Aider, or generic agents. Keep AGENTS.md and .agent/ as the source of truth and avoid duplicating long policy blocks.
 ```
 
-## 24. Audit Nested Instruction Coverage
+## 25. Audit Nested Instruction Coverage
 
 ```text
 Use .agent/NESTED_GUIDANCE.md. Audit this monorepo for subtrees that need nested AGENTS.md files. Identify package-specific commands, tests, risks, active overlays, ownership, and done criteria. Do not add nested files unless the benefit is clear.
 ```
 
-## 25. Convert Existing Agent Instructions
+## 26. Convert Existing Agent Instructions
 
 ```text
 Convert existing CLAUDE.md, GEMINI.md, Copilot instructions, Cursor rules, or Aider guidance into AGENTS.md and .agent/ without losing local facts. Keep vendor-specific files as thin adapters that point back to the source-of-truth guidance.
 ```
 
-## 26. Adopt Domain Overlays
+## 27. Adopt Domain Overlays
 
 ```text
 Use .agent/DOMAINS/README.md and .agent/TEMPLATES/DOMAIN_OVERLAY_ADOPTION.md. Identify which overlays apply to this repository, why they apply, which files/modules they cover, what commands and checks prove them, which specialist review lanes are active, and which overlays are intentionally deferred.
 ```
 
-## 27. Audit Missing Overlays
+## 28. Audit Missing Overlays
 
 ```text
 Audit this repository for missing domain overlays. Consider AI/ML, autonomous research, systems/kernels, accelerators, compilers, quantum, formal verification, robotics/autonomy, and frontends. Recommend only overlays justified by actual repository work.
 ```
 
-## 28. Prune Irrelevant Overlays
+## 29. Prune Irrelevant Overlays
 
 ```text
 Review active .agent/DOMAINS/* overlays and identify any that do not apply. Recommend removing or deferring irrelevant overlays to keep guidance focused.
 ```
 
-## 29. Model Card Creation
+## 30. Model Card Creation
 
 ```text
 Use .agent/DOMAINS/AI_ML.md and .agent/TEMPLATES/MODEL_CARD.md. Create or update a model card from source-of-truth code, training config, data records, eval reports, safety notes, license, and artifact provenance. Mark unknowns explicitly.
 ```
 
-## 30. Dataset Card Creation
+## 31. Dataset Card Creation
 
 ```text
 Use .agent/DOMAINS/AI_ML.md and .agent/TEMPLATES/DATASET_CARD.md. Create or update a dataset card covering source, license, collection process, consent/privacy, schema, splits, bias, restrictions, transformations, and known limitations.
 ```
 
-## 31. Evaluation Report
+## 32. Evaluation Report
 
 ```text
 Use .agent/TEMPLATES/EVAL_REPORT.md. Produce an evaluation report for this model or system. Include system under test, metrics, datasets, baselines, statistical treatment, failure cases, safety/security observations, limitations, and reproducibility commands.
 ```
 
-## 32. Experiment Log
+## 33. Experiment Log
 
 ```text
 Use .agent/TEMPLATES/EXPERIMENT_LOG.md. Record the hypothesis, setup, commands, environment, artifacts, results, interpretation, limitations, negative results, and next step for this experiment.
 ```
 
-## 33. Autonomous Research Audit
+## 34. Autonomous Research Audit
 
 ```text
 Use .agent/DOMAINS/AUTONOMOUS_RESEARCH.md. Audit this autonomous research workflow for literature source-of-truth, claim tracking, hypothesis/experiment separation, agent boundaries, replication requirements, negative result handling, artifact retention, and human review gates.
 ```
 
-## 34. Kernel Or Unsafe Review
+## 35. Kernel Or Unsafe Review
 
 ```text
 Use .agent/DOMAINS/SYSTEMS_KERNELS.md. Review this systems, kernel, driver, firmware, unsafe-code, or low-level runtime change for ABI/API compatibility, undefined behavior, memory ordering, synchronization, resource lifetime, fault handling, fuzz/static/dynamic analysis, cross-platform validation, and rollback or recovery.
 ```
 
-## 35. Accelerator Performance Review
+## 36. Accelerator Performance Review
 
 ```text
 Use .agent/DOMAINS/ACCELERATORS.md. Review this accelerator change for hardware topology, runtime/compiler stack, profiling evidence, numerical equivalence, precision, quantization, determinism, memory transfers, occupancy, throughput, latency, energy, multi-device behavior, and correctness before speed.
 ```
 
-## 36. Profiling-First Optimization
+## 37. Profiling-First Optimization
 
 ```text
 Treat this as profiling-first optimization. Identify the hot path from evidence, define a baseline, make the smallest change, measure before and after, preserve correctness checks, and document limitations.
 ```
 
-## 37. Compiler Change Review
+## 38. Compiler Change Review
 
 ```text
 Use .agent/DOMAINS/COMPILERS.md. Review this compiler/language/runtime change for source-of-truth semantics, parser/lowering/typechecker/optimizer/codegen boundaries, semantic preservation, diagnostics, compatibility, golden and negative tests, differential testing, fuzzing, and release notes.
 ```
 
-## 38. Quantum Change Review
+## 39. Quantum Change Review
 
 ```text
 Use .agent/DOMAINS/QUANTUM.md. Review this quantum change for circuit model, target backend, OpenQASM/QIR compatibility, simulator versus hardware behavior, noise/error model, gate set, topology constraints, timing/calibration assumptions, measurement randomness, reproducibility, and tolerances.
 ```
 
-## 39. Formal Proof Review
+## 40. Formal Proof Review
 
 ```text
 Use .agent/DOMAINS/FORMAL_VERIFICATION.md and .agent/TEMPLATES/FORMAL_PROOF_NOTE.md. Review theorem statements, definitions, assumptions, axioms, proof status, trusted computing base, commands, artifacts, known gaps, and whether the proof is checked, partial, admitted, failed, or informal.
 ```
 
-## 40. Interface Contract Review
+## 41. Interface Contract Review
 
 ```text
 Use .agent/TEMPLATES/INTERFACE_CONTRACT.md. Review this API, CLI, schema, protocol, UI contract, file format, or model artifact interface for consumers, compatibility promises, inputs, outputs, errors, versioning, security/privacy, performance, tests, and migration.
 ```
 
-## 41. Robotics Safety Review
+## 42. Robotics Safety Review
 
 ```text
 Use .agent/DOMAINS/ROBOTICS_AUTONOMY.md and .agent/TEMPLATES/SAFETY_CASE.md. Review hazards, assumptions, controls, actuation gating, operator override, simulation evidence, hardware or field evidence, logs/traces, residual risk, approval needed, and rollback or recovery.
 ```
 
-## 42. Autonomy Field-Test Admission
+## 43. Autonomy Field-Test Admission
 
 ```text
 Before any hardware or field test, verify simulation evidence, safety boundaries, actuation gating, operator override, logs/traces, emergency stop behavior, environment assumptions, approval, and rollback or recovery. Do not perform unapproved physical-world actions.
 ```
 
-## 43. Frontend Workflow Review
+## 44. Frontend Workflow Review
 
 ```text
 Use .agent/DOMAINS/FRONTENDS.md. Review this frontend change for product intent, user workflow, accessibility, responsive behavior, browser/device coverage, state/data contracts, loading and error states, performance, privacy-sensitive UI, and visual evidence.
 ```
 
-## 44. Visual Verification Review
+## 45. Visual Verification Review
 
 ```text
 For this visual change, run or inspect browser evidence such as screenshots, visual regression output, or manual viewport checks. Confirm text fits, controls are accessible, layouts do not overlap, responsive states work, and the UI matches the intended workflow.
 ```
 
-## 45. Current-Source Refresh
+## 46. Current-Source Refresh
 
 ```text
 Use .agent/WORKFLOW.md. Before planning or editing, refresh current primary sources for any facts that can drift: agent ecosystem behavior, MCP/tool behavior, security guidance, standards, APIs, package behavior, model/data/benchmark claims, hardware/runtime behavior, laws, or release facts. Record source title, URL or local path, date checked, version or publication date, decision depending on the source, and remaining drift risk.
 ```
 
-## 46. Final Pre-Submit Review
+## 47. Final Pre-Submit Review
 
 ```text
 Before finalizing, reread AGENTS.md, .agent/DONE.md, and any active domain overlays. Review the diff for correctness, tests, docs, unnecessary churn, dependency risk, performance risk, security risk, source-of-truth drift, specialist-review requirements, and remaining uncertainty. Then provide a final response with Summary, Validation, and Notes.
 ```
 
-## 47. Create An Execution Plan Only
+## 48. Create An Execution Plan Only
 
 ```text
 Create an execution plan using .agent/TEMPLATES/EXEC_PLAN.md. Do not edit code yet. The plan should be concrete enough for another agent or engineer to implement. Include assumptions, affected files, active overlays, validation strategy, review strategy, risks, and open questions.
 ```
 
-## 48. Convert A Vague Request Into A Safe Plan
+## 49. Convert A Vague Request Into A Safe Plan
 
 ```text
 The request is broad or ambiguous. Use AGENTS.md and .agent/WORKFLOW.md to narrow it into a safe implementation plan. Identify what can be done now, what assumptions are required, what should not be changed, what validation would prove success, and what review is needed. Do not edit files yet.

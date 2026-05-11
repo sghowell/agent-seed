@@ -30,6 +30,32 @@ Consider these risk classes before changing or operating agentic systems:
 - rogue behavior, behavior drift, or uncontrolled loops,
 - weak observability, weak audit, or unclear accountability.
 
+## Five Eyes/NSA Agentic AI Risk Categories
+
+For enterprise, critical-infrastructure, defense, production, safety-sensitive, or regulated uses, map risks to these categories:
+
+```text
+Privilege risks: over-privileged agents, credential abuse, excessive tool authority, weak least-agency controls.
+Design and configuration risks: insecure provisioning, unsafe defaults, weak sandboxing, unclear approval gates, brittle policy wiring.
+Behavior risks: goal misalignment, specification gaming, deceptive behavior, uncontrolled loops, unexpected emergent capability.
+Structural risks: complex tool chains, insecure inter-agent communication, opaque dependencies, cross-system attack paths.
+Accountability risks: weak audit trails, unclear ownership, untraceable decisions, missing approval records, poor incident reconstruction.
+```
+
+Use these categories alongside ordinary security threat modeling. They are a governance and review lens, not a replacement for concrete abuse cases.
+
+## Agentic AI Security Lifecycle
+
+For agentic systems, consider controls across the lifecycle:
+
+```text
+Designing secure agents: define authority, data access, approval gates, fail-safe behavior, and human oversight.
+Developing secure agents: test prompt-injection, tool-misuse, context-poisoning, and unsafe-code-execution cases.
+Managing third-party components: review skills, MCP servers, prompts, hooks, plugins, models, datasets, and connectors as supply chain.
+Deploying agents securely: use staged rollout, least privilege, isolation, monitoring, rollback, and explicit operator ownership.
+Operating agents securely: monitor behavior drift, audit tool calls, review incidents, rotate credentials, and reassess threat models.
+```
+
 ## Least Agency
 
 Grant the minimum needed:

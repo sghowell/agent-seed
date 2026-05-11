@@ -78,6 +78,12 @@ Context/memory poisoning risk: <summary>
 Supply-chain risk: <summary>
 Approval boundaries: <summary>
 Auditability: <summary>
+Privilege risks: <summary>
+Design/configuration risks: <summary>
+Behavior risks: <summary>
+Structural risks: <summary>
+Accountability risks: <summary>
+Lifecycle coverage: <summary>
 ```
 
 ## 7. Local Conventions
