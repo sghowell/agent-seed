@@ -67,7 +67,7 @@ Use these references while implementing. They were checked on May 11, 2026; re-c
 **Files:**
 - No content edits expected.
 
-- [ ] **Step 1: Confirm clean `main`**
+- [x] **Step 1: Confirm clean `main`**
 
 Run:
 
@@ -84,7 +84,7 @@ Expected:
 - `main` is aligned with `origin/main`.
 - No uncommitted user changes are present.
 
-- [ ] **Step 2: Create the implementation branch**
+- [x] **Step 2: Create the implementation branch**
 
 Run:
 
@@ -104,7 +104,7 @@ Expected:
 - Modify: `VERSION`
 - Modify: `CHANGELOG.md`
 
-- [ ] **Step 1: Bump `VERSION`**
+- [x] **Step 1: Bump `VERSION`**
 
 Replace the entire file with:
 
@@ -112,7 +112,7 @@ Replace the entire file with:
 0.2.1
 ```
 
-- [ ] **Step 2: Add `CHANGELOG.md` section**
+- [x] **Step 2: Add `CHANGELOG.md` section**
 
 Add this section above `## 0.2.0`:
 
@@ -131,7 +131,7 @@ Included:
 - updated GitHub Copilot adapter guidance for repository, path-specific, and agent instructions.
 ```
 
-- [ ] **Step 3: Validate version metadata**
+- [x] **Step 3: Validate version metadata**
 
 Run:
 
@@ -146,7 +146,7 @@ Expected:
 - `CHANGELOG.md` has `0.2.1` above `0.2.0`.
 - `git diff --check` exits 0.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add VERSION CHANGELOG.md
@@ -161,7 +161,7 @@ git commit -m "Bump version for v0.2.1 corrections"
 - Modify: `README.md`
 - Modify: `ADOPTION.md`
 
-- [ ] **Step 1: Replace README quick adoption command block**
+- [x] **Step 1: Replace README quick adoption command block**
 
 In `README.md`, replace the command block under `## Quick Adoption` with:
 
@@ -176,7 +176,7 @@ cp .agent/LOCAL_CONTEXT.example.md /path/to/target-repo/.agent/LOCAL_CONTEXT.md
 cp -R .agent/TEMPLATES /path/to/target-repo/.agent/TEMPLATES
 ```
 
-- [ ] **Step 2: Add README selected-overlays note**
+- [x] **Step 2: Add README selected-overlays note**
 
 Immediately after the quick adoption command block, add:
 
@@ -202,7 +202,7 @@ cp .agent/DOMAINS/AI_ML.md /path/to/target-repo/.agent/DOMAINS/AI_ML.md
 The `AI_ML.md` command is an example. Select the actual overlays from `.agent/DOMAINS/README.md`; do not copy every overlay by default.
 ````
 
-- [ ] **Step 3: Replace ADOPTION Mode 2 copy block**
+- [x] **Step 3: Replace ADOPTION Mode 2 copy block**
 
 In `ADOPTION.md`, replace the Mode 2 `Copy:` block with:
 
@@ -216,7 +216,7 @@ AGENTS.md
 .agent/TEMPLATES/
 ```
 
-- [ ] **Step 4: Update Mode 2 explanatory text**
+- [x] **Step 4: Update Mode 2 explanatory text**
 
 Replace:
 
@@ -230,7 +230,7 @@ with:
 This mode gives agents the full lightweight seed: workflow, standards, prompts, templates, and local context. It does not copy domain overlays by default.
 ```
 
-- [ ] **Step 5: Replace standard adoption copy commands**
+- [x] **Step 5: Replace standard adoption copy commands**
 
 In `ADOPTION.md`, replace the command block under `### 1. Copy The Files` with:
 
@@ -245,7 +245,7 @@ cp .agent/LOCAL_CONTEXT.example.md /path/to/target-repo/.agent/LOCAL_CONTEXT.md
 cp -R .agent/TEMPLATES /path/to/target-repo/.agent/TEMPLATES
 ```
 
-- [ ] **Step 6: Add explicit overlay copy example to ADOPTION**
+- [x] **Step 6: Add explicit overlay copy example to ADOPTION**
 
 Replace:
 
@@ -272,7 +272,7 @@ cp .agent/DOMAINS/AI_ML.md /path/to/target-repo/.agent/DOMAINS/AI_ML.md
 The `AI_ML.md` command is an example. Select the overlays that match actual repository work.
 ````
 
-- [ ] **Step 7: Validate adoption semantics**
+- [x] **Step 7: Validate adoption semantics**
 
 Run:
 
@@ -287,7 +287,7 @@ Expected:
 - High-rigor adoption still documents selected overlays.
 - `git diff --check` exits 0.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add README.md ADOPTION.md
@@ -303,7 +303,7 @@ git commit -m "Fix overlay adoption guidance"
 - Modify: `.agent/ADAPTERS.md`
 - Modify: `ADOPTION.md`
 
-- [ ] **Step 1: Replace broad Aider ignore**
+- [x] **Step 1: Replace broad Aider ignore**
 
 In `.gitignore`, replace:
 
@@ -320,7 +320,7 @@ with:
 !.aider.conf.yml
 ```
 
-- [ ] **Step 2: Tighten Aider adapter section**
+- [x] **Step 2: Tighten Aider adapter section**
 
 In `.agent/ADAPTERS.md`, replace the `## Aider` section with:
 
@@ -349,7 +349,7 @@ relevant tests
 ```
 ````
 
-- [ ] **Step 3: Update ADOPTION adapter list**
+- [x] **Step 3: Update ADOPTION adapter list**
 
 In `ADOPTION.md`, replace:
 
@@ -363,7 +363,7 @@ with:
 - `.aider.conf.yml` for shared Aider read-file configuration.
 ```
 
-- [ ] **Step 4: Validate Aider guidance**
+- [x] **Step 4: Validate Aider guidance**
 
 Run:
 
@@ -378,7 +378,7 @@ Expected:
 - `.aider.conf.yml` is explicitly allowed.
 - `.agent/ADAPTERS.md` says `.aider.conf.yml` can be shared guidance.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add .gitignore .agent/ADAPTERS.md ADOPTION.md
@@ -395,7 +395,7 @@ git commit -m "Preserve shared Aider configuration"
 - Modify: `.agent/TEMPLATES/REPO_AUDIT.md`
 - Modify: `.agent/PROMPTS.md`
 
-- [ ] **Step 1: Update workflow summary**
+- [x] **Step 1: Update workflow summary**
 
 In `.agent/WORKFLOW.md`, replace the workflow summary block with:
 
@@ -413,7 +413,7 @@ In `.agent/WORKFLOW.md`, replace the workflow summary block with:
 11. Summarize honestly.
 ```
 
-- [ ] **Step 2: Add current-source refresh section**
+- [x] **Step 2: Add current-source refresh section**
 
 Add this section after `## 2. Inspect The Repository`:
 
@@ -447,7 +447,7 @@ Record:
 Do not freeze stale assumptions into repository guidance when a current primary source is practical to check.
 ```
 
-- [ ] **Step 3: Renumber later workflow headings**
+- [x] **Step 3: Renumber later workflow headings**
 
 Renumber the following headings in `.agent/WORKFLOW.md`:
 
@@ -462,7 +462,7 @@ Renumber the following headings in `.agent/WORKFLOW.md`:
 ## 10. Summarize Honestly -> ## 11. Summarize Honestly
 ```
 
-- [ ] **Step 4: Update `EXEC_PLAN.md`**
+- [x] **Step 4: Update `EXEC_PLAN.md`**
 
 In `.agent/TEMPLATES/EXEC_PLAN.md`, add this section after `## 5. Active Domain Overlays` and renumber following headings:
 
@@ -481,7 +481,7 @@ Drift risk:
 
 When implementing, keep the existing template style. The angle-bracket fields are intentional template fields.
 
-- [ ] **Step 5: Update `REPO_AUDIT.md`**
+- [x] **Step 5: Update `REPO_AUDIT.md`**
 
 In `.agent/TEMPLATES/REPO_AUDIT.md`, add this field under `## 13. Agent-Readiness Assessment`:
 
@@ -495,7 +495,7 @@ Add this field under `## 15. Suggested Seed Adoption`:
 Current-source refresh needs: <sources or none>
 ```
 
-- [ ] **Step 6: Add prompt**
+- [x] **Step 6: Add prompt**
 
 In `.agent/PROMPTS.md`, add this prompt before `## 44. Final Pre-Submit Review` and renumber following prompt headings:
 
@@ -507,7 +507,7 @@ Use .agent/WORKFLOW.md. Before planning or editing, refresh current primary sour
 ```
 ````
 
-- [ ] **Step 7: Validate current-source coverage**
+- [x] **Step 7: Validate current-source coverage**
 
 Run:
 
@@ -522,7 +522,7 @@ Expected:
 - Execution plan and audit templates capture source freshness.
 - Prompt library includes a current-source refresh prompt.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add .agent/WORKFLOW.md .agent/TEMPLATES/EXEC_PLAN.md .agent/TEMPLATES/REPO_AUDIT.md .agent/PROMPTS.md
@@ -538,7 +538,7 @@ git commit -m "Add current-source refresh guidance"
 - Modify: `.agent/TEMPLATES/THREAT_MODEL.md`
 - Modify: `.agent/PROMPTS.md`
 
-- [ ] **Step 1: Add MCP checklist to `.agent/SECURITY.md`**
+- [x] **Step 1: Add MCP checklist to `.agent/SECURITY.md`**
 
 Add this subsection after the existing `## Tool And MCP Security` bullets:
 
@@ -561,7 +561,7 @@ For HTTP-based MCP servers and clients, verify:
 - logs, traces, screenshots, and final summaries do not expose tokens.
 ```
 
-- [ ] **Step 2: Add MCP fields to threat model**
+- [x] **Step 2: Add MCP fields to threat model**
 
 In `.agent/TEMPLATES/THREAT_MODEL.md`, add this section after `## Tools And Permissions`:
 
@@ -582,7 +582,7 @@ Token storage and logging controls: <controls>
 
 The angle-bracket fields are intentional template fields.
 
-- [ ] **Step 3: Add MCP authorization prompt**
+- [x] **Step 3: Add MCP authorization prompt**
 
 In `.agent/PROMPTS.md`, add this prompt after `## 15. MCP Or Tool Review`:
 
@@ -596,7 +596,7 @@ Use .agent/SECURITY.md and .agent/TEMPLATES/THREAT_MODEL.md. Review this MCP int
 
 Renumber later prompt headings.
 
-- [ ] **Step 4: Validate MCP coverage**
+- [x] **Step 4: Validate MCP coverage**
 
 Run:
 
@@ -611,7 +611,7 @@ Expected:
 - Threat model captures MCP-specific authorization facts.
 - Prompt library has a dedicated MCP authorization review.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add .agent/SECURITY.md .agent/TEMPLATES/THREAT_MODEL.md .agent/PROMPTS.md
@@ -628,7 +628,7 @@ git commit -m "Add MCP authorization checklist"
 - Modify: `.agent/TEMPLATES/REPO_AUDIT.md`
 - Modify: `.agent/PROMPTS.md`
 
-- [ ] **Step 1: Add taxonomy section to `.agent/SECURITY.md`**
+- [x] **Step 1: Add taxonomy section to `.agent/SECURITY.md`**
 
 Add this section after `## Threat Surfaces`:
 
@@ -648,7 +648,7 @@ Accountability risks: weak audit trails, unclear ownership, untraceable decision
 Use these categories alongside ordinary security threat modeling. They are a governance and review lens, not a replacement for concrete abuse cases.
 ````
 
-- [ ] **Step 2: Add lifecycle section to `.agent/SECURITY.md`**
+- [x] **Step 2: Add lifecycle section to `.agent/SECURITY.md`**
 
 Add this section after the taxonomy section:
 
@@ -666,7 +666,7 @@ Operating agents securely: monitor behavior drift, audit tool calls, review inci
 ```
 ````
 
-- [ ] **Step 3: Add taxonomy fields to threat model**
+- [x] **Step 3: Add taxonomy fields to threat model**
 
 In `.agent/TEMPLATES/THREAT_MODEL.md`, add this section after `## Threat Surfaces` if a threat-surfaces section exists after implementation, otherwise add it after `## Actors And Identities`:
 
@@ -683,7 +683,7 @@ Lifecycle stage: <designing | developing | managing third-party components | dep
 ```
 ````
 
-- [ ] **Step 4: Add audit fields**
+- [x] **Step 4: Add audit fields**
 
 In `.agent/TEMPLATES/REPO_AUDIT.md`, add these fields under `## 6. Agentic Security Readiness`:
 
@@ -696,7 +696,7 @@ Accountability risks: <summary>
 Lifecycle coverage: <summary>
 ```
 
-- [ ] **Step 5: Add prompt**
+- [x] **Step 5: Add prompt**
 
 In `.agent/PROMPTS.md`, add this prompt after the MCP authorization prompt:
 
@@ -710,7 +710,7 @@ Use .agent/SECURITY.md. Map this agentic system or change to the Five Eyes/NSA r
 
 Renumber later prompt headings.
 
-- [ ] **Step 6: Validate taxonomy coverage**
+- [x] **Step 6: Validate taxonomy coverage**
 
 Run:
 
@@ -725,7 +725,7 @@ Expected:
 - Threat model and audit templates capture the taxonomy.
 - Prompt library can request the mapping directly.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add .agent/SECURITY.md .agent/TEMPLATES/THREAT_MODEL.md .agent/TEMPLATES/REPO_AUDIT.md .agent/PROMPTS.md
@@ -741,7 +741,7 @@ git commit -m "Map agentic AI security risks"
 - Modify: `ADOPTION.md`
 - Modify: `.agent/PROMPTS.md`
 
-- [ ] **Step 1: Replace Copilot section**
+- [x] **Step 1: Replace Copilot section**
 
 In `.agent/ADAPTERS.md`, replace the `## GitHub Copilot` section with:
 
@@ -776,7 +776,7 @@ Follow `AGENTS.md` and the supporting files under `.agent/`. Keep changes narrow
 Path-specific instruction files should add local facts for a subtree. They should not fork global policy.
 ````
 
-- [ ] **Step 2: Update ADOPTION adapter list**
+- [x] **Step 2: Update ADOPTION adapter list**
 
 In `ADOPTION.md`, replace the Copilot bullet:
 
@@ -790,7 +790,7 @@ with:
 - `AGENTS.md`, nested `AGENTS.md`, `.github/copilot-instructions.md`, and `.github/instructions/*.instructions.md` for GitHub Copilot,
 ```
 
-- [ ] **Step 3: Update adapter prompt**
+- [x] **Step 3: Update adapter prompt**
 
 In `.agent/PROMPTS.md`, find the adapter prompt and replace:
 
@@ -804,7 +804,7 @@ with:
 Recommend minimal bridge files for Codex/OpenAI, Claude Code, Gemini CLI, GitHub Copilot, Cursor, Aider, or generic agents. For Copilot, prefer AGENTS.md and nested AGENTS.md before adding .github bridge files.
 ```
 
-- [ ] **Step 4: Validate Copilot guidance**
+- [x] **Step 4: Validate Copilot guidance**
 
 Run:
 
@@ -818,7 +818,7 @@ Expected:
 - Copilot section documents `AGENTS.md` and nearest-file precedence.
 - `.github` bridge files are optional rather than implied default.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add .agent/ADAPTERS.md ADOPTION.md .agent/PROMPTS.md
@@ -832,7 +832,7 @@ git commit -m "Update Copilot adapter guidance"
 **Files:**
 - Modify as needed: `README.md`, `ADOPTION.md`, `.agent/ADAPTERS.md`, `.agent/WORKFLOW.md`, `.agent/SECURITY.md`, `.agent/TEMPLATES/*`, `.agent/PROMPTS.md`, `CHANGELOG.md`, `VERSION`, `.gitignore`
 
-- [ ] **Step 1: Verify all six findings map to changed surfaces**
+- [x] **Step 1: Verify all six findings map to changed surfaces**
 
 Run:
 
@@ -850,7 +850,7 @@ Expected:
 - Copilot nearest `AGENTS.md` guidance appears in adapters/adoption/prompts.
 - Existing Gemini bridge guidance still mentions `GEMINI.md` and configurable `context.fileName`.
 
-- [ ] **Step 2: Check prohibited files**
+- [x] **Step 2: Check prohibited files**
 
 Run:
 
@@ -865,7 +865,7 @@ Expected:
 - No package/build/CI/tooling files.
 - No vendor-specific bridge files are added to the seed.
 
-- [ ] **Step 3: Unresolved text scan**
+- [x] **Step 3: Unresolved text scan**
 
 Run:
 
@@ -878,7 +878,7 @@ Expected:
 - No accidental unresolved planning text in guidance files.
 - Existing template fields are acceptable when they are intentional form fields.
 
-- [ ] **Step 4: Version and changelog check**
+- [x] **Step 4: Version and changelog check**
 
 Run:
 
@@ -890,7 +890,7 @@ Expected:
 
 - `VERSION` and `CHANGELOG.md` both show `0.2.1`.
 
-- [ ] **Step 5: Markdown whitespace check**
+- [x] **Step 5: Markdown whitespace check**
 
 Run:
 
@@ -902,7 +902,7 @@ Expected:
 
 - Exit 0.
 
-- [ ] **Step 6: Commit any consistency edits**
+- [x] **Step 6: Commit any consistency edits**
 
 If Step 1 through Step 5 required edits, run:
 
@@ -920,7 +920,7 @@ If no files changed, skip this commit.
 **Files:**
 - No content edits expected.
 
-- [ ] **Step 1: Final branch validation**
+- [x] **Step 1: Final branch validation**
 
 Run:
 
@@ -939,7 +939,7 @@ Expected:
 - No executable files.
 - No prohibited package/build/CI/vendor bridge files.
 
-- [ ] **Step 2: Merge locally**
+- [x] **Step 2: Merge locally**
 
 From the feature branch:
 
@@ -953,7 +953,7 @@ Expected:
 
 - Fast-forward merge succeeds.
 
-- [ ] **Step 3: Re-run final validation on `main`**
+- [x] **Step 3: Re-run final validation on `main`**
 
 Run the full command set from Step 1 again.
 
@@ -961,7 +961,7 @@ Expected:
 
 - Same successful result on merged `main`.
 
-- [ ] **Step 4: Push and confirm**
+- [x] **Step 4: Push and confirm**
 
 ```bash
 git push origin main
@@ -975,7 +975,7 @@ Expected:
 - `main` is clean and aligned with `origin/main`.
 - Remote `refs/heads/main` points to the v0.2.1 corrective commit.
 
-- [ ] **Step 5: Cleanup merged feature branch**
+- [x] **Step 5: Cleanup merged feature branch**
 
 ```bash
 git branch -d agent-seed-v0.2.1-review-fixes
@@ -986,6 +986,16 @@ Expected:
 - Local feature branch deletes cleanly.
 
 ---
+
+## Execution Evidence
+
+The v0.2.1 corrective plan was executed and merged before later corrective releases.
+
+- Historical v0.2.1 corrective tip from Git history: `5c23cea01a9b759ea95d3e015396d4b191c6eb50`.
+- Remote branch checked during backfill: `origin/main`.
+- Local feature branch state during backfill: no `agent-seed-v0.2.1-review-fixes` branch is present.
+- Hosted CI check during backfill: `gh run list --limit 3 --json databaseId,status,conclusion,headSha,workflowName` returned `[]`, so no hosted GitHub Actions workflows existed for this repository.
+- Backfill validation evidence: clean `main`, `git diff --check HEAD` passed, executable/prohibited-file scans were empty, stale MCP scans were empty, unresolved-text scans for active artifacts were empty.
 
 ## Acceptance Criteria
 

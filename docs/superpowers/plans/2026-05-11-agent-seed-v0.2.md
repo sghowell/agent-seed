@@ -120,7 +120,7 @@ Use these sources and current repo files as the v0.2 source of truth:
 - Modify: `VERSION`
 - Modify: `AGENTS.md`
 
-- [ ] **Step 1: Update version metadata**
+- [x] **Step 1: Update version metadata**
 
 Set `VERSION` to:
 
@@ -147,7 +147,7 @@ Included:
 - adoption guidance for license handling and high-rigor repositories.
 ```
 
-- [ ] **Step 2: Update root navigation without bloating `AGENTS.md`**
+- [x] **Step 2: Update root navigation without bloating `AGENTS.md`**
 
 In `AGENTS.md`, add short bullets pointing to these new files:
 
@@ -160,7 +160,7 @@ In `AGENTS.md`, add short bullets pointing to these new files:
 .agent/DOMAINS/                    Optional domain overlays.
 ```
 
-- [ ] **Step 3: Update `README.md` structure**
+- [x] **Step 3: Update `README.md` structure**
 
 Add sections that explain:
 
@@ -170,7 +170,7 @@ Add sections that explain:
 - high-rigor projects can adopt `.agent/QUALITY_BAR.md`, `.agent/SECURITY.md`, `.agent/REVIEW_PROTOCOL.md`, and selected `.agent/DOMAINS/*`.
 - `LICENSE` is MIT for the seed content.
 
-- [ ] **Step 4: Update `ADOPTION.md` modes**
+- [x] **Step 4: Update `ADOPTION.md` modes**
 
 Add a fourth adoption mode:
 
@@ -202,7 +202,7 @@ Add license guidance:
 - If copying seed content, preserve attribution where appropriate for the organization's policy.
 - Do not replace a target repository license accidentally.
 
-- [ ] **Step 5: Validate skeleton**
+- [x] **Step 5: Validate skeleton**
 
 Run:
 
@@ -217,7 +217,7 @@ Expected:
 - New files are referenced but not yet all created until later tasks.
 - No package, CI, lockfile, or executable tooling appears.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add README.md ADOPTION.md AGENTS.md CHANGELOG.md VERSION
@@ -234,7 +234,7 @@ git commit -m "Plan v0.2 navigation and versioning"
 - Modify: `.agent/DONE.md`
 - Modify: `AGENTS.md`
 
-- [ ] **Step 1: Create `.agent/QUALITY_BAR.md`**
+- [x] **Step 1: Create `.agent/QUALITY_BAR.md`**
 
 Create the file with these sections and concrete expectations:
 
@@ -288,7 +288,7 @@ Use the strongest practical evidence for the risk level.
 - Final accountability stays with the integrating agent or maintainer.
 ```
 
-- [ ] **Step 2: Tighten `.agent/STANDARDS.md`**
+- [x] **Step 2: Tighten `.agent/STANDARDS.md`**
 
 Add a short section near the top:
 
@@ -300,7 +300,7 @@ For high-rigor repositories, use `.agent/QUALITY_BAR.md` as the governing standa
 
 Add references to stronger evidence requirements in correctness, tests, validation, performance, security, and scientific sections.
 
-- [ ] **Step 3: Tighten `.agent/DONE.md`**
+- [x] **Step 3: Tighten `.agent/DONE.md`**
 
 Add criteria:
 
@@ -310,7 +310,7 @@ Add criteria:
 - reproducibility metadata exists for research/performance work,
 - rollback or recovery has been considered for high-risk changes.
 
-- [ ] **Step 4: Keep `AGENTS.md` compact**
+- [x] **Step 4: Keep `AGENTS.md` compact**
 
 Add one root-level principle:
 
@@ -318,7 +318,7 @@ Add one root-level principle:
 - Treat `.agent/QUALITY_BAR.md` as the standard for high-rigor work; generic guidance is a floor, not a ceiling.
 ```
 
-- [ ] **Step 5: Validate quality-bar integration**
+- [x] **Step 5: Validate quality-bar integration**
 
 Run:
 
@@ -332,7 +332,7 @@ Expected:
 - `QUALITY_BAR` appears in root and supporting docs.
 - No markdown whitespace errors from `git diff --check`.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add AGENTS.md .agent/QUALITY_BAR.md .agent/STANDARDS.md .agent/DONE.md
@@ -352,7 +352,7 @@ git commit -m "Add elite quality bar guidance"
 - Modify: `.agent/PROMPTS.md`
 - Modify: `AGENTS.md`
 
-- [ ] **Step 1: Create `.agent/SECURITY.md`**
+- [x] **Step 1: Create `.agent/SECURITY.md`**
 
 Include sections:
 
@@ -365,7 +365,7 @@ Include sections:
 - Third-party agent assets: treat skills, MCP servers, prompts, rules, and hooks as executable supply chain.
 - Monitoring and audit: preserve logs and evidence for high-risk agent actions.
 
-- [ ] **Step 2: Create `.agent/TEMPLATES/THREAT_MODEL.md`**
+- [x] **Step 2: Create `.agent/TEMPLATES/THREAT_MODEL.md`**
 
 Include fields:
 
@@ -390,7 +390,7 @@ Residual risk:
 Reviewer:
 ```
 
-- [ ] **Step 3: Integrate security into workflow**
+- [x] **Step 3: Integrate security into workflow**
 
 In `.agent/WORKFLOW.md`, add a security branch:
 
@@ -398,7 +398,7 @@ In `.agent/WORKFLOW.md`, add a security branch:
 - run security checks available in the target repo;
 - request specialist review when high-risk.
 
-- [ ] **Step 4: Strengthen standards and done criteria**
+- [x] **Step 4: Strengthen standards and done criteria**
 
 In `.agent/STANDARDS.md` and `.agent/DONE.md`, add explicit criteria for:
 
@@ -410,7 +410,7 @@ In `.agent/STANDARDS.md` and `.agent/DONE.md`, add explicit criteria for:
 - destructive action approval,
 - auditability.
 
-- [ ] **Step 5: Add security prompts**
+- [x] **Step 5: Add security prompts**
 
 In `.agent/PROMPTS.md`, add prompts for:
 
@@ -420,7 +420,7 @@ In `.agent/PROMPTS.md`, add prompts for:
 - supply-chain review,
 - adversarial security review.
 
-- [ ] **Step 6: Validate security coverage**
+- [x] **Step 6: Validate security coverage**
 
 Run:
 
@@ -434,7 +434,7 @@ Expected:
 - Each major agentic AI risk class appears at least once.
 - The root file points to `.agent/SECURITY.md` without becoming long.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add AGENTS.md .agent/SECURITY.md .agent/STANDARDS.md .agent/WORKFLOW.md .agent/DONE.md .agent/PROMPTS.md .agent/TEMPLATES/THREAT_MODEL.md
@@ -453,7 +453,7 @@ git commit -m "Add agentic AI security guidance"
 - Modify: `.agent/PROMPTS.md`
 - Modify: `.gitignore`
 
-- [ ] **Step 1: Create `.agent/ADAPTERS.md`**
+- [x] **Step 1: Create `.agent/ADAPTERS.md`**
 
 Include sections:
 
@@ -467,7 +467,7 @@ Include sections:
 - Generic agents: read `AGENTS.md`, then `.agent/LOCAL_CONTEXT.md`, then selected overlays.
 - Conflict policy: one source of truth, adapters should point back to seed files.
 
-- [ ] **Step 2: Create `.agent/NESTED_GUIDANCE.md`**
+- [x] **Step 2: Create `.agent/NESTED_GUIDANCE.md`**
 
 Include sections:
 
@@ -478,7 +478,7 @@ Include sections:
 - Required nested sections: commands, local risks, local tests, local ownership, local done criteria.
 - Conflict handling and review.
 
-- [ ] **Step 3: Update adoption docs**
+- [x] **Step 3: Update adoption docs**
 
 In `ADOPTION.md`, add instructions for:
 
@@ -487,7 +487,7 @@ In `ADOPTION.md`, add instructions for:
 - not adding vendor-specific files to the seed by default,
 - adding nested files for packages/components in monorepos.
 
-- [ ] **Step 4: Update prompts**
+- [x] **Step 4: Update prompts**
 
 Add prompts:
 
@@ -495,7 +495,7 @@ Add prompts:
 - "Audit nested instruction coverage for this monorepo."
 - "Convert existing CLAUDE/GEMINI/Copilot instructions into AGENTS.md without losing local facts."
 
-- [ ] **Step 5: Update `.gitignore` for local agent settings**
+- [x] **Step 5: Update `.gitignore` for local agent settings**
 
 Add only local/private files, not shared config:
 
@@ -508,7 +508,7 @@ Add only local/private files, not shared config:
 
 Do not ignore shared guidance files such as `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, or `.github/copilot-instructions.md`.
 
-- [ ] **Step 6: Validate adapters**
+- [x] **Step 6: Validate adapters**
 
 Run:
 
@@ -521,7 +521,7 @@ Expected:
 
 - Adapter guidance is informative but vendor-specific files are not added to the seed root.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add README.md ADOPTION.md .agent/ADAPTERS.md .agent/NESTED_GUIDANCE.md .agent/PROMPTS.md .gitignore
@@ -541,7 +541,7 @@ git commit -m "Add adapter and nested guidance"
 - Modify: `.agent/PROMPTS.md`
 - Modify: `AGENTS.md`
 
-- [ ] **Step 1: Create `.agent/REVIEW_PROTOCOL.md`**
+- [x] **Step 1: Create `.agent/REVIEW_PROTOCOL.md`**
 
 Define review layers:
 
@@ -579,7 +579,7 @@ Define disagreement policy:
 - The stricter safety/security/correctness position governs until the maintainer decides.
 - Record accepted risk in final notes or design record.
 
-- [ ] **Step 2: Create `.agent/TEMPLATES/SPECIALIST_REVIEW.md`**
+- [x] **Step 2: Create `.agent/TEMPLATES/SPECIALIST_REVIEW.md`**
 
 Include fields:
 
@@ -598,7 +598,7 @@ Final recommendation:
 Reviewer uncertainty:
 ```
 
-- [ ] **Step 3: Update generic review template**
+- [x] **Step 3: Update generic review template**
 
 In `.agent/TEMPLATES/REVIEW.md`, add:
 
@@ -609,7 +609,7 @@ In `.agent/TEMPLATES/REVIEW.md`, add:
 - source-of-truth drift,
 - final accountability.
 
-- [ ] **Step 4: Add workflow triggers**
+- [x] **Step 4: Add workflow triggers**
 
 In `.agent/WORKFLOW.md`, define triggers for specialist review:
 
@@ -624,7 +624,7 @@ In `.agent/WORKFLOW.md`, define triggers for specialist review:
 - user-facing frontend workflows,
 - broad docs/source-of-truth rewrites.
 
-- [ ] **Step 5: Add prompts**
+- [x] **Step 5: Add prompts**
 
 Add prompts for:
 
@@ -634,7 +634,7 @@ Add prompts for:
 - integration review,
 - resolving review disagreement.
 
-- [ ] **Step 6: Validate review protocol**
+- [x] **Step 6: Validate review protocol**
 
 Run:
 
@@ -647,7 +647,7 @@ Expected:
 
 - Review protocol is explicit, tool-agnostic, and domain-aware.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add AGENTS.md .agent/REVIEW_PROTOCOL.md .agent/TEMPLATES/SPECIALIST_REVIEW.md .agent/TEMPLATES/REVIEW.md .agent/WORKFLOW.md .agent/DONE.md .agent/PROMPTS.md
@@ -666,7 +666,7 @@ git commit -m "Add specialist review protocol"
 - Modify: `.agent/LOCAL_CONTEXT.example.md`
 - Modify: `.agent/PROMPTS.md`
 
-- [ ] **Step 1: Create `.agent/DOMAINS/README.md`**
+- [x] **Step 1: Create `.agent/DOMAINS/README.md`**
 
 Define:
 
@@ -677,7 +677,7 @@ Define:
 - overlays can require stronger validation than generic guidance,
 - if overlays conflict, the more safety-critical or specific rule governs until maintainers decide.
 
-- [ ] **Step 2: Create `.agent/TEMPLATES/DOMAIN_OVERLAY_ADOPTION.md`**
+- [x] **Step 2: Create `.agent/TEMPLATES/DOMAIN_OVERLAY_ADOPTION.md`**
 
 Include:
 
@@ -694,7 +694,7 @@ Maintainer decisions:
 Deferred overlays:
 ```
 
-- [ ] **Step 3: Update local context example**
+- [x] **Step 3: Update local context example**
 
 Add fields:
 
@@ -709,7 +709,7 @@ Data/model/artifact governance:
 Reproducibility requirements:
 ```
 
-- [ ] **Step 4: Update adoption and prompts**
+- [x] **Step 4: Update adoption and prompts**
 
 Add:
 
@@ -718,7 +718,7 @@ Add:
 - prompt for auditing whether overlays are missing,
 - prompt for pruning overlays that do not apply.
 
-- [ ] **Step 5: Validate framework**
+- [x] **Step 5: Validate framework**
 
 Run:
 
@@ -731,7 +731,7 @@ Expected:
 
 - Overlay framework exists before domain-specific files are added.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add README.md ADOPTION.md .agent/DOMAINS/README.md .agent/TEMPLATES/DOMAIN_OVERLAY_ADOPTION.md .agent/LOCAL_CONTEXT.example.md .agent/PROMPTS.md
@@ -756,7 +756,7 @@ git commit -m "Add domain overlay framework"
 - Modify: `.agent/STANDARDS.md`
 - Modify: `.agent/PROMPTS.md`
 
-- [ ] **Step 1: Create `.agent/DOMAINS/AI_ML.md`**
+- [x] **Step 1: Create `.agent/DOMAINS/AI_ML.md`**
 
 Include sections:
 
@@ -772,7 +772,7 @@ Include sections:
 - training: optimizer, schedule, checkpointing, resume, distributed failure, cost,
 - documentation: model cards, dataset cards, eval reports.
 
-- [ ] **Step 2: Create `.agent/DOMAINS/AUTONOMOUS_RESEARCH.md`**
+- [x] **Step 2: Create `.agent/DOMAINS/AUTONOMOUS_RESEARCH.md`**
 
 Include:
 
@@ -785,7 +785,7 @@ Include:
 - artifact retention,
 - human review before external publication or high-impact claims.
 
-- [ ] **Step 3: Create AI/ML templates**
+- [x] **Step 3: Create AI/ML templates**
 
 Create templates with explicit fields:
 
@@ -798,7 +798,7 @@ Create templates with explicit fields:
 - `DATA_PROVENANCE.md`: origin, license, transformation, lineage, retention, privacy, reproducibility.
 - `RESEARCH_CLAIM.md`: claim, evidence, counterevidence, assumptions, replication status, confidence.
 
-- [ ] **Step 4: Integrate lightly**
+- [x] **Step 4: Integrate lightly**
 
 In `.agent/STANDARDS.md`, add a short AI/ML lifecycle section that points to the overlay and templates.
 
@@ -810,7 +810,7 @@ In `.agent/PROMPTS.md`, add prompts for:
 - experiment log,
 - autonomous research audit.
 
-- [ ] **Step 5: Validate AI/ML coverage**
+- [x] **Step 5: Validate AI/ML coverage**
 
 Run:
 
@@ -823,7 +823,7 @@ Expected:
 
 - AI/ML lifecycle is covered from data to training to eval to inference.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add .agent/DOMAINS/AI_ML.md .agent/DOMAINS/AUTONOMOUS_RESEARCH.md .agent/TEMPLATES/MODEL_CARD.md .agent/TEMPLATES/DATASET_CARD.md .agent/TEMPLATES/EVAL_REPORT.md .agent/TEMPLATES/EXPERIMENT_LOG.md .agent/TEMPLATES/TRAINING_RUN.md .agent/TEMPLATES/INFERENCE_DEPLOYMENT.md .agent/TEMPLATES/DATA_PROVENANCE.md .agent/TEMPLATES/RESEARCH_CLAIM.md .agent/STANDARDS.md .agent/PROMPTS.md
@@ -842,7 +842,7 @@ git commit -m "Add AI and research lifecycle guidance"
 - Modify: `.agent/STANDARDS.md`
 - Modify: `.agent/PROMPTS.md`
 
-- [ ] **Step 1: Create `.agent/DOMAINS/SYSTEMS_KERNELS.md`**
+- [x] **Step 1: Create `.agent/DOMAINS/SYSTEMS_KERNELS.md`**
 
 Include:
 
@@ -857,7 +857,7 @@ Include:
 - cross-platform and architecture-specific validation,
 - rollback and boot/recovery considerations.
 
-- [ ] **Step 2: Create `.agent/DOMAINS/ACCELERATORS.md`**
+- [x] **Step 2: Create `.agent/DOMAINS/ACCELERATORS.md`**
 
 Include:
 
@@ -874,7 +874,7 @@ Include:
 - multi-device and distributed behavior,
 - correctness before speed.
 
-- [ ] **Step 3: Expand benchmark templates**
+- [x] **Step 3: Expand benchmark templates**
 
 Update `.agent/TEMPLATES/BENCHMARK_NOTE.md` and create `.agent/TEMPLATES/HARDWARE_BENCHMARK.md` with fields:
 
@@ -897,7 +897,7 @@ Regression threshold:
 Artifacts:
 ```
 
-- [ ] **Step 4: Integrate standards and prompts**
+- [x] **Step 4: Integrate standards and prompts**
 
 Add short pointers in `.agent/STANDARDS.md`.
 
@@ -908,7 +908,7 @@ Add prompts for:
 - hardware benchmark note,
 - profiling-first optimization.
 
-- [ ] **Step 5: Validate systems/performance coverage**
+- [x] **Step 5: Validate systems/performance coverage**
 
 Run:
 
@@ -921,7 +921,7 @@ Expected:
 
 - Benchmark templates require enough metadata for expert review.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add .agent/DOMAINS/SYSTEMS_KERNELS.md .agent/DOMAINS/ACCELERATORS.md .agent/TEMPLATES/BENCHMARK_NOTE.md .agent/TEMPLATES/HARDWARE_BENCHMARK.md .agent/STANDARDS.md .agent/PROMPTS.md
@@ -941,7 +941,7 @@ git commit -m "Add systems and accelerator guidance"
 - Modify: `.agent/STANDARDS.md`
 - Modify: `.agent/PROMPTS.md`
 
-- [ ] **Step 1: Create `.agent/DOMAINS/COMPILERS.md`**
+- [x] **Step 1: Create `.agent/DOMAINS/COMPILERS.md`**
 
 Include:
 
@@ -956,7 +956,7 @@ Include:
 - performance impact,
 - release notes for user-facing language changes.
 
-- [ ] **Step 2: Create `.agent/DOMAINS/QUANTUM.md`**
+- [x] **Step 2: Create `.agent/DOMAINS/QUANTUM.md`**
 
 Include:
 
@@ -971,7 +971,7 @@ Include:
 - numerical tolerances,
 - hardware availability limits.
 
-- [ ] **Step 3: Create `.agent/DOMAINS/FORMAL_VERIFICATION.md`**
+- [x] **Step 3: Create `.agent/DOMAINS/FORMAL_VERIFICATION.md`**
 
 Include:
 
@@ -985,7 +985,7 @@ Include:
 - proof review by specialist,
 - migration notes for Lean/Rocq/tool versions.
 
-- [ ] **Step 4: Create templates**
+- [x] **Step 4: Create templates**
 
 `FORMAL_PROOF_NOTE.md` fields:
 
@@ -1018,7 +1018,7 @@ Tests:
 Migration:
 ```
 
-- [ ] **Step 5: Integrate standards and prompts**
+- [x] **Step 5: Integrate standards and prompts**
 
 Add short pointers in `.agent/STANDARDS.md`.
 
@@ -1029,7 +1029,7 @@ Add prompts for:
 - formal proof review,
 - interface contract review.
 
-- [ ] **Step 6: Validate coverage**
+- [x] **Step 6: Validate coverage**
 
 Run:
 
@@ -1042,7 +1042,7 @@ Expected:
 
 - Formal and semantic claims require explicit assumptions and evidence.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add .agent/DOMAINS/COMPILERS.md .agent/DOMAINS/QUANTUM.md .agent/DOMAINS/FORMAL_VERIFICATION.md .agent/TEMPLATES/FORMAL_PROOF_NOTE.md .agent/TEMPLATES/INTERFACE_CONTRACT.md .agent/STANDARDS.md .agent/PROMPTS.md
@@ -1060,7 +1060,7 @@ git commit -m "Add compiler quantum and formal guidance"
 - Modify: `.agent/STANDARDS.md`
 - Modify: `.agent/PROMPTS.md`
 
-- [ ] **Step 1: Create `.agent/DOMAINS/ROBOTICS_AUTONOMY.md`**
+- [x] **Step 1: Create `.agent/DOMAINS/ROBOTICS_AUTONOMY.md`**
 
 Include:
 
@@ -1076,7 +1076,7 @@ Include:
 - field-test admission,
 - no unapproved physical-world actions.
 
-- [ ] **Step 2: Create `.agent/DOMAINS/FRONTENDS.md`**
+- [x] **Step 2: Create `.agent/DOMAINS/FRONTENDS.md`**
 
 Include:
 
@@ -1091,7 +1091,7 @@ Include:
 - privacy-sensitive UI,
 - screenshots or browser evidence for visual changes.
 
-- [ ] **Step 3: Create `.agent/TEMPLATES/SAFETY_CASE.md`**
+- [x] **Step 3: Create `.agent/TEMPLATES/SAFETY_CASE.md`**
 
 Include:
 
@@ -1109,7 +1109,7 @@ Approval needed:
 Rollback/recovery:
 ```
 
-- [ ] **Step 4: Integrate standards and prompts**
+- [x] **Step 4: Integrate standards and prompts**
 
 Add short pointers in `.agent/STANDARDS.md`.
 
@@ -1120,7 +1120,7 @@ Add prompts for:
 - frontend workflow review,
 - visual verification review.
 
-- [ ] **Step 5: Validate coverage**
+- [x] **Step 5: Validate coverage**
 
 Run:
 
@@ -1133,7 +1133,7 @@ Expected:
 
 - Physical-world and user-facing changes require explicit evidence and review.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add .agent/DOMAINS/ROBOTICS_AUTONOMY.md .agent/DOMAINS/FRONTENDS.md .agent/TEMPLATES/SAFETY_CASE.md .agent/STANDARDS.md .agent/PROMPTS.md
@@ -1147,7 +1147,7 @@ git commit -m "Add robotics and frontend guidance"
 **Files:**
 - Modify as needed: all markdown files touched in v0.2.
 
-- [ ] **Step 1: Check terminology**
+- [x] **Step 1: Check terminology**
 
 Run:
 
@@ -1161,7 +1161,7 @@ Expected:
 - Use `source-of-truth` consistently unless in prose where `source of truth` reads better.
 - Use `specialist review` as the broad concept and `subagent review` only when the reviewer is actually another agent.
 
-- [ ] **Step 2: Check for prohibited expansion**
+- [x] **Step 2: Check for prohibited expansion**
 
 Run:
 
@@ -1177,7 +1177,7 @@ Expected:
 - The package/build/CI/tooling command prints nothing.
 - Only markdown, `VERSION`, `.gitignore`, and `LICENSE` are present.
 
-- [ ] **Step 3: Check adapter restraint**
+- [x] **Step 3: Check adapter restraint**
 
 Run:
 
@@ -1190,7 +1190,7 @@ Expected:
 - The command prints nothing except `.gitignore` entries are not files.
 - Adapter guidance exists in `.agent/ADAPTERS.md`; vendor files are not added by default.
 
-- [ ] **Step 4: Placeholder scan**
+- [x] **Step 4: Placeholder scan**
 
 Run:
 
@@ -1204,7 +1204,7 @@ Expected:
 - New guidance files should not contain accidental placeholders.
 - If this output includes new non-template guidance files, replace placeholders with concrete guidance.
 
-- [ ] **Step 5: Line count sanity**
+- [x] **Step 5: Line count sanity**
 
 Run:
 
@@ -1217,7 +1217,7 @@ Expected:
 - `AGENTS.md` remains compact enough to skim quickly.
 - Long detail lives in `.agent/` modules and templates.
 
-- [ ] **Step 6: Final commit for consistency edits**
+- [x] **Step 6: Final commit for consistency edits**
 
 ```bash
 git add README.md ADOPTION.md AGENTS.md .agent CHANGELOG.md VERSION .gitignore
@@ -1233,7 +1233,7 @@ Skip this commit if there are no consistency edits after Task 10.
 **Files:**
 - No content edits expected.
 
-- [ ] **Step 1: Run final validation**
+- [x] **Step 1: Run final validation**
 
 Run:
 
@@ -1254,7 +1254,7 @@ Expected:
 - Version and changelog show `0.2.0`.
 - `git diff --check HEAD` exits 0.
 
-- [ ] **Step 2: Review final tree manually**
+- [x] **Step 2: Review final tree manually**
 
 Confirm final tree includes:
 
@@ -1280,7 +1280,7 @@ LICENSE
 .agent/TEMPLATES/*.md
 ```
 
-- [ ] **Step 3: Merge locally**
+- [x] **Step 3: Merge locally**
 
 From the feature branch:
 
@@ -1294,7 +1294,7 @@ Expected:
 
 - Fast-forward merge succeeds.
 
-- [ ] **Step 4: Re-run final validation on `main`**
+- [x] **Step 4: Re-run final validation on `main`**
 
 Run the full command set from Step 1 again.
 
@@ -1302,7 +1302,7 @@ Expected:
 
 - Same successful result on `main`.
 
-- [ ] **Step 5: Push and confirm**
+- [x] **Step 5: Push and confirm**
 
 ```bash
 git push origin main
@@ -1316,7 +1316,7 @@ Expected:
 - `main` is clean and aligned with `origin/main`.
 - Remote `refs/heads/main` points to the v0.2 commit.
 
-- [ ] **Step 6: Cleanup merged feature branch**
+- [x] **Step 6: Cleanup merged feature branch**
 
 ```bash
 git branch -d agent-seed-v0.2
@@ -1327,6 +1327,16 @@ Expected:
 - Local feature branch deletes cleanly.
 
 ---
+
+## Execution Evidence
+
+The v0.2 plan was executed and merged before later corrective releases.
+
+- Historical v0.2 implementation tip from Git history: `db2593e5b97169534d7b8d53bb6b1e4a2ec4371f`.
+- Remote branch checked during backfill: `origin/main`.
+- Local feature branch state during backfill: no `agent-seed-v0.2` branch is present.
+- Hosted CI check during backfill: `gh run list --limit 3 --json databaseId,status,conclusion,headSha,workflowName` returned `[]`, so no hosted GitHub Actions workflows existed for this repository.
+- Backfill validation evidence: clean `main`, `git diff --check HEAD` passed, executable/prohibited-file scans were empty, stale MCP scans were empty, unresolved-text scans for active artifacts were empty.
 
 ## Acceptance Criteria
 
