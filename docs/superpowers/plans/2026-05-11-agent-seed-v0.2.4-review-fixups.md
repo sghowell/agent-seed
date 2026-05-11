@@ -459,7 +459,7 @@ After push confirmation, record the pushed implementation tip before creating th
 git rev-parse HEAD
 ```
 
-Add this section immediately before `## Acceptance Criteria`, using the exact commit hash printed by `git rev-parse HEAD` as the implementation tip:
+Add this section immediately before `## Acceptance Criteria`, using the exact pushed implementation tip:
 
 ```markdown
 ## Execution Evidence
