@@ -1,4 +1,4 @@
-# Execution plan
+# Execution Plan
 
 Use this template for substantial or risky changes.
 
@@ -12,7 +12,7 @@ Describe the outcome this work should achieve.
 <goal>
 ```
 
-## 2. Non-goals
+## 2. Non-Goals
 
 List what this work should not include.
 
@@ -22,15 +22,29 @@ List what this work should not include.
 <non-goal>
 ```
 
-## 3. Current state
+## 3. Current State
 
-Summarize the relevant existing implementation, tests, docs, commands, and constraints.
+Summarize the relevant existing implementation, tests, docs, commands, source-of-truth files, and constraints.
 
 ```text
 <current state>
 ```
 
-## 4. Proposed approach
+## 4. Quality Bar
+
+```text
+Required rigor: <minimal | standard | high-rigor | safety-critical>
+Why: <risk/consequence>
+Evidence required: <tests, benchmarks, proofs, review, traces, evals, screenshots, safety evidence>
+```
+
+## 5. Active Domain Overlays
+
+```text
+<overlay>: <why it applies>
+```
+
+## 6. Proposed Approach
 
 Describe the intended approach at a high level.
 
@@ -38,7 +52,7 @@ Describe the intended approach at a high level.
 <approach>
 ```
 
-## 5. Affected files
+## 7. Affected Files
 
 List expected files or areas to change.
 
@@ -48,7 +62,7 @@ List expected files or areas to change.
 <path>: <expected change>
 ```
 
-## 6. Implementation steps
+## 8. Implementation Steps
 
 Break the work into small, reviewable steps.
 
@@ -58,7 +72,7 @@ Break the work into small, reviewable steps.
 3. <step>
 ```
 
-## 7. Validation strategy
+## 9. Validation Strategy
 
 List the checks that should prove the work is correct.
 
@@ -68,10 +82,33 @@ Full tests: <command or not applicable>
 Format/lint/type checks: <command or not applicable>
 Docs checks: <command or not applicable>
 Benchmarks: <command or not applicable>
+Security checks: <command or not applicable>
+Formal checks: <command or not applicable>
+Hardware/browser/simulation checks: <command or not applicable>
 Manual validation: <steps or not applicable>
 ```
 
-## 8. Risks and mitigations
+## 10. Review Plan
+
+```text
+Self-review: <required checks>
+Specialist review lanes: <lanes or not needed>
+Adversarial review: <needed/not needed and why>
+Integration review: <needed/not needed and why>
+Reviewer evidence: <what reviewers should inspect>
+```
+
+## 11. Evidence Plan
+
+```text
+Artifacts to preserve:
+Commands to record:
+Environment metadata:
+Data/model/provenance records:
+Reproducibility notes:
+```
+
+## 12. Risks And Mitigations
 
 ```text
 Risk: <risk>
@@ -81,15 +118,15 @@ Risk: <risk>
 Mitigation: <mitigation>
 ```
 
-## 9. Compatibility and migration
+## 13. Compatibility And Migration
 
-Describe impact on public APIs, configs, schemas, persisted data, integrations, or user workflows.
+Describe impact on public APIs, configs, schemas, persisted data, integrations, artifacts, or user workflows.
 
 ```text
 <compatibility notes>
 ```
 
-## 10. Rollback or recovery
+## 14. Rollback Or Recovery
 
 Describe how the change can be reverted or mitigated if it fails.
 
@@ -97,14 +134,22 @@ Describe how the change can be reverted or mitigated if it fails.
 <rollback notes>
 ```
 
-## 11. Open questions
+## 15. Accountability
+
+```text
+Owner:
+Approvals needed:
+Accepted risk record:
+```
+
+## 16. Open Questions
 
 ```text
 <question>
 <question>
 ```
 
-## 12. Completion criteria
+## 17. Completion Criteria
 
 The work is complete when:
 
