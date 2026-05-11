@@ -51,7 +51,7 @@ Use these references while implementing. They were checked on May 11, 2026; re-c
 **Files:**
 - No content edits expected.
 
-- [ ] **Step 1: Confirm clean `main`**
+- [x] **Step 1: Confirm clean `main`**
 
 Run:
 
@@ -68,7 +68,7 @@ Expected:
 - `main` is aligned with `origin/main`.
 - No uncommitted user changes are present.
 
-- [ ] **Step 2: Create the implementation branch**
+- [x] **Step 2: Create the implementation branch**
 
 Run:
 
@@ -88,7 +88,7 @@ Expected:
 - Modify: `VERSION`
 - Modify: `CHANGELOG.md`
 
-- [ ] **Step 1: Bump `VERSION`**
+- [x] **Step 1: Bump `VERSION`**
 
 Replace the entire file with:
 
@@ -96,7 +96,7 @@ Replace the entire file with:
 0.2.3
 ```
 
-- [ ] **Step 2: Add `CHANGELOG.md` section**
+- [x] **Step 2: Add `CHANGELOG.md` section**
 
 Add this section above `## 0.2.2`:
 
@@ -113,7 +113,7 @@ Included:
 - completed v0.2.2 implementation-plan tracking evidence.
 ```
 
-- [ ] **Step 3: Validate version metadata**
+- [x] **Step 3: Validate version metadata**
 
 Run:
 
@@ -128,7 +128,7 @@ Expected:
 - `CHANGELOG.md` has `0.2.3` above `0.2.2`.
 - `git diff --check` exits 0.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 Run:
 
@@ -150,7 +150,7 @@ Expected:
 - Modify: `.agent/TEMPLATES/THREAT_MODEL.md`
 - Modify: `.agent/PROMPTS.md`
 
-- [ ] **Step 1: Replace MCP checklist in `.agent/SECURITY.md`**
+- [x] **Step 1: Replace MCP checklist in `.agent/SECURITY.md`**
 
 Replace the existing `### MCP Authorization Checklist` section with:
 
@@ -192,7 +192,7 @@ Verify:
 - logs, traces, screenshots, benchmark artifacts, and final summaries do not expose tokens, codes, client secrets, refresh tokens, private keys, state values, or authorization metadata that would enable misuse.
 ```
 
-- [ ] **Step 2: Replace MCP fields in `.agent/TEMPLATES/THREAT_MODEL.md`**
+- [x] **Step 2: Replace MCP fields in `.agent/TEMPLATES/THREAT_MODEL.md`**
 
 Replace the existing `## MCP Authorization` fenced text block with:
 
@@ -228,7 +228,7 @@ Token storage and logging controls: <controls>
 
 The angle-bracket fields are intentional template fields.
 
-- [ ] **Step 3: Replace MCP authorization prompt in `.agent/PROMPTS.md`**
+- [x] **Step 3: Replace MCP authorization prompt in `.agent/PROMPTS.md`**
 
 Replace the `## 16. MCP Authorization Review` prompt body with:
 
@@ -236,7 +236,7 @@ Replace the `## 16. MCP Authorization Review` prompt body with:
 Use .agent/SECURITY.md and .agent/TEMPLATES/THREAT_MODEL.md. Review this MCP integration against the latest MCP authorization specification. Verify transport applicability, protected resource metadata discovery, `authorization_servers` handling, multiple-authorization-server selection, authorization server discovery, HTTPS endpoint policy, client registration approach, Client ID Metadata Document handling, scope selection, scope challenges, runtime insufficient-scope handling, resource indicators, token audience binding, token passthrough prevention, authorization-header token use, authorization-code protections, PKCE metadata discovery, `S256` use, state-parameter binding, exact redirect URI handling, open-redirect prevention, localhost redirect constraints, trust policy, token storage, token logging, and scoped credentials. Findings first, ordered by severity.
 ```
 
-- [ ] **Step 4: Validate MCP hardening coverage**
+- [x] **Step 4: Validate MCP hardening coverage**
 
 Run:
 
@@ -252,7 +252,7 @@ Expected:
 - `.agent/PROMPTS.md` asks reviewers to check those facts directly.
 - `git diff --check` exits 0.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 Run:
 
@@ -272,23 +272,18 @@ Expected:
 **Files:**
 - Modify: `docs/superpowers/plans/2026-05-11-agent-seed-v0.2.2-review-fixups.md`
 
-- [ ] **Step 1: Mark v0.2.2 checklist steps complete**
+- [x] **Step 1: Mark v0.2.2 checklist steps complete**
 
-In `docs/superpowers/plans/2026-05-11-agent-seed-v0.2.2-review-fixups.md`, replace every line prefix:
-
-```text
-- [ ] 
-```
-
-with:
+In `docs/superpowers/plans/2026-05-11-agent-seed-v0.2.2-review-fixups.md`, replace every unchecked checkbox prefix with a checked checkbox prefix:
 
 ```text
-- [x] 
+unchecked: - [ ]
+checked: - [x]
 ```
 
 Only change checkbox prefixes in this file. Do not change command snippets or explanatory prose.
 
-- [ ] **Step 2: Add execution evidence section**
+- [x] **Step 2: Add execution evidence section**
 
 Add this section immediately before `## Acceptance Criteria`:
 
@@ -304,7 +299,7 @@ The v0.2.2 plan was executed and merged before the follow-up review.
 - Validation evidence: clean `main`, `git diff --check HEAD` passed, executable/prohibited-file scans were empty, stale MCP scans were empty, unresolved-text scans for active artifacts were empty.
 ```
 
-- [ ] **Step 3: Validate v0.2.2 plan tracking**
+- [x] **Step 3: Validate v0.2.2 plan tracking**
 
 Run:
 
@@ -322,7 +317,7 @@ Expected:
 - The third `rg` command exits 0 and finds the execution evidence.
 - `git diff --check` exits 0.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 Run:
 
@@ -348,7 +343,7 @@ Expected:
 - Review: `docs/superpowers/plans/2026-05-11-agent-seed-v0.2.2-review-fixups.md`
 - Review: `docs/superpowers/plans/2026-05-11-agent-seed-v0.2.3-review-fixups.md`
 
-- [ ] **Step 1: Verify all findings map to changed surfaces**
+- [x] **Step 1: Verify all findings map to changed surfaces**
 
 Run:
 
@@ -362,7 +357,7 @@ Expected:
 - MCP OAuth hardening terms appear in the security checklist, threat model, and prompt.
 - v0.2.2 plan evidence and checked boxes are present.
 
-- [ ] **Step 2: Check stale MCP references**
+- [x] **Step 2: Check stale MCP references**
 
 Run:
 
@@ -374,7 +369,7 @@ Expected:
 
 - Exit 1 with no output.
 
-- [ ] **Step 3: Check prohibited files**
+- [x] **Step 3: Check prohibited files**
 
 Run:
 
@@ -389,7 +384,7 @@ Expected:
 - No package/build/CI/tooling files.
 - No vendor-specific bridge files are added to the seed.
 
-- [ ] **Step 4: Unresolved text scan**
+- [x] **Step 4: Unresolved text scan**
 
 Run:
 
@@ -402,7 +397,7 @@ Expected:
 - Exit 1 with no accidental unresolved planning text.
 - Intentional angle-bracket template fields are not matched by this scan.
 
-- [ ] **Step 5: Markdown whitespace check**
+- [x] **Step 5: Markdown whitespace check**
 
 Run:
 
@@ -414,7 +409,7 @@ Expected:
 
 - Exit 0.
 
-- [ ] **Step 6: Commit any consistency edits**
+- [x] **Step 6: Commit any consistency edits**
 
 If Step 1 through Step 5 required edits, run:
 
@@ -435,7 +430,7 @@ Expected:
 **Files:**
 - No content edits expected.
 
-- [ ] **Step 1: Final branch validation**
+- [x] **Step 1: Final branch validation**
 
 Run:
 
@@ -454,7 +449,7 @@ Expected:
 - No executable files.
 - No prohibited package/build/CI/vendor bridge files.
 
-- [ ] **Step 2: Merge locally**
+- [x] **Step 2: Merge locally**
 
 From the feature branch, run:
 
@@ -468,7 +463,7 @@ Expected:
 
 - Fast-forward merge succeeds.
 
-- [ ] **Step 3: Re-run final validation on `main`**
+- [x] **Step 3: Re-run final validation on `main`**
 
 Run the full command set from Step 1 again.
 
@@ -476,7 +471,7 @@ Expected:
 
 - Same successful result on merged `main`.
 
-- [ ] **Step 4: Push and confirm**
+- [x] **Step 4: Push and confirm**
 
 Run:
 
@@ -495,7 +490,7 @@ Expected:
 - If GitHub Actions still returns an empty list, record that no hosted Actions runs exist for this repo.
 - If GitHub Actions returns a run for the pushed commit, wait for it to complete and require success before cleanup.
 
-- [ ] **Step 5: Cleanup merged feature branch**
+- [x] **Step 5: Cleanup merged feature branch**
 
 Run:
 
