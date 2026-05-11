@@ -55,7 +55,7 @@ Use these references while implementing. They were checked on May 11, 2026; re-c
 **Files:**
 - No content edits expected.
 
-- [ ] **Step 1: Confirm clean `main`**
+- [x] **Step 1: Confirm clean `main`**
 
 Run:
 
@@ -72,7 +72,7 @@ Expected:
 - `main` is aligned with `origin/main`.
 - No uncommitted user changes are present.
 
-- [ ] **Step 2: Create the implementation branch**
+- [x] **Step 2: Create the implementation branch**
 
 Run:
 
@@ -92,7 +92,7 @@ Expected:
 - Modify: `VERSION`
 - Modify: `CHANGELOG.md`
 
-- [ ] **Step 1: Bump `VERSION`**
+- [x] **Step 1: Bump `VERSION`**
 
 Replace the entire file with:
 
@@ -100,7 +100,7 @@ Replace the entire file with:
 0.2.2
 ```
 
-- [ ] **Step 2: Add `CHANGELOG.md` section**
+- [x] **Step 2: Add `CHANGELOG.md` section**
 
 Add this section above `## 0.2.1`:
 
@@ -117,7 +117,7 @@ Included:
 - repaired `zsh`-safe validation commands in the v0.2.1 implementation plan.
 ```
 
-- [ ] **Step 3: Validate version metadata**
+- [x] **Step 3: Validate version metadata**
 
 Run:
 
@@ -132,7 +132,7 @@ Expected:
 - `CHANGELOG.md` has `0.2.2` above `0.2.1`.
 - `git diff --check` exits 0.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add VERSION CHANGELOG.md
@@ -148,7 +148,7 @@ git commit -m "Bump version for v0.2.2 fixups"
 - Modify: `.agent/TEMPLATES/THREAT_MODEL.md`
 - Modify: `.agent/PROMPTS.md`
 
-- [ ] **Step 1: Replace MCP checklist in `.agent/SECURITY.md`**
+- [x] **Step 1: Replace MCP checklist in `.agent/SECURITY.md`**
 
 Replace the existing `### MCP Authorization Checklist` section with:
 
@@ -182,7 +182,7 @@ Verify:
 - logs, traces, screenshots, benchmark artifacts, and final summaries do not expose tokens, codes, client secrets, refresh tokens, private keys, or authorization metadata that would enable misuse.
 ```
 
-- [ ] **Step 2: Replace MCP fields in threat model**
+- [x] **Step 2: Replace MCP fields in threat model**
 
 In `.agent/TEMPLATES/THREAT_MODEL.md`, replace the existing `## MCP Authorization` fenced text block with:
 
@@ -212,7 +212,7 @@ Token storage and logging controls: <controls>
 
 The angle-bracket fields are intentional template fields.
 
-- [ ] **Step 3: Update MCP prompt coverage**
+- [x] **Step 3: Update MCP prompt coverage**
 
 In `.agent/PROMPTS.md`, replace the `## 16. MCP Authorization Review` prompt body with:
 
@@ -220,7 +220,7 @@ In `.agent/PROMPTS.md`, replace the `## 16. MCP Authorization Review` prompt bod
 Use .agent/SECURITY.md and .agent/TEMPLATES/THREAT_MODEL.md. Review this MCP integration against the latest MCP authorization specification. Verify transport applicability, protected resource metadata discovery, authorization server discovery, client registration approach, Client ID Metadata Document handling, scope selection, scope challenges, runtime insufficient-scope handling, resource indicators, token audience binding, token passthrough prevention, authorization-header token use, authorization-code protections, PKCE, exact redirect URI handling, localhost redirect constraints, trust policy, token storage, token logging, and scoped credentials. Findings first, ordered by severity.
 ```
 
-- [ ] **Step 4: Validate MCP latest-spec coverage**
+- [x] **Step 4: Validate MCP latest-spec coverage**
 
 Run:
 
@@ -236,7 +236,7 @@ Expected:
 - `.agent/PROMPTS.md` requests latest-spec MCP review explicitly.
 - `git diff --check` exits 0.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add .agent/SECURITY.md .agent/TEMPLATES/THREAT_MODEL.md .agent/PROMPTS.md
@@ -251,7 +251,7 @@ git commit -m "Update MCP authorization guidance"
 - Modify: `.agent/TEMPLATES/THREAT_MODEL.md`
 - Modify: `.agent/PROMPTS.md`
 
-- [ ] **Step 1: Add current-source section to threat model**
+- [x] **Step 1: Add current-source section to threat model**
 
 In `.agent/TEMPLATES/THREAT_MODEL.md`, add this section after `## System Or Change` and before `## Assets`:
 
@@ -272,7 +272,7 @@ Drift risk:
 
 The angle-bracket field is an intentional template field.
 
-- [ ] **Step 2: Update threat-model prompt**
+- [x] **Step 2: Update threat-model prompt**
 
 In `.agent/PROMPTS.md`, replace the `## 14. Agentic AI Threat Model` prompt body with:
 
@@ -280,7 +280,7 @@ In `.agent/PROMPTS.md`, replace the `## 14. Agentic AI Threat Model` prompt body
 Use .agent/SECURITY.md and .agent/TEMPLATES/THREAT_MODEL.md. For drift-prone security, tool, MCP, agent, model, dataset, benchmark, hardware, API, legal, or standards facts, refresh current primary sources before threat modeling and record them in the template. Threat-model this agentic system or change. Focus on prompt injection, goal hijack, tool misuse, excessive permissions, identity abuse, memory or context poisoning, data exfiltration, unsafe code execution, supply-chain risk, autonomy boundaries, approval gates, auditability, and residual risk.
 ```
 
-- [ ] **Step 3: Validate current-source coverage**
+- [x] **Step 3: Validate current-source coverage**
 
 Run:
 
@@ -295,7 +295,7 @@ Expected:
 - The agentic threat-model prompt instructs agents to refresh drift-prone facts.
 - `git diff --check` exits 0.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add .agent/TEMPLATES/THREAT_MODEL.md .agent/PROMPTS.md
@@ -310,7 +310,7 @@ git commit -m "Add threat-model source refresh fields"
 - Modify: `ADOPTION.md`
 - Modify: `.agent/ADAPTERS.md`
 
-- [ ] **Step 1: Replace ADOPTION adapter introduction**
+- [x] **Step 1: Replace ADOPTION adapter introduction**
 
 In `ADOPTION.md`, replace the text from:
 
@@ -346,7 +346,7 @@ Common source-of-truth and bridge surfaces include:
 - `.aider.conf.yml` for shared Aider read-file configuration.
 ````
 
-- [ ] **Step 2: Replace bridge policy sentence**
+- [x] **Step 2: Replace bridge policy sentence**
 
 In `ADOPTION.md`, replace:
 
@@ -360,7 +360,7 @@ with:
 Vendor-specific bridge files should point back to `AGENTS.md` and `.agent/`, not fork policy into inconsistent copies.
 ```
 
-- [ ] **Step 3: Tighten Copilot section in `.agent/ADAPTERS.md`**
+- [x] **Step 3: Tighten Copilot section in `.agent/ADAPTERS.md`**
 
 In `.agent/ADAPTERS.md`, replace this line in the GitHub Copilot `Recommended default` list:
 
@@ -374,7 +374,7 @@ with:
 - use root `CLAUDE.md` or `GEMINI.md` only as a Copilot-recognized single-file alternative when maintainers deliberately choose that bridge instead of `AGENTS.md`.
 ```
 
-- [ ] **Step 4: Validate Copilot wording**
+- [x] **Step 4: Validate Copilot wording**
 
 Run:
 
@@ -390,7 +390,7 @@ Expected:
 - `.agent/ADAPTERS.md` no longer implies `CLAUDE.md` and `GEMINI.md` are generic Copilot defaults.
 - `git diff --check` exits 0.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add ADOPTION.md .agent/ADAPTERS.md
@@ -404,7 +404,7 @@ git commit -m "Clarify adapter and bridge wording"
 **Files:**
 - Modify: `docs/superpowers/plans/2026-05-11-agent-seed-v0.2.1-review-fixes.md`
 
-- [ ] **Step 1: Update MCP source reference**
+- [x] **Step 1: Update MCP source reference**
 
 In `docs/superpowers/plans/2026-05-11-agent-seed-v0.2.1-review-fixes.md`, replace the stale MCP authorization reference from the previous June 2025 spec URL with:
 
@@ -414,7 +414,7 @@ In `docs/superpowers/plans/2026-05-11-agent-seed-v0.2.1-review-fixes.md`, replac
 
 Do not leave the old dated MCP authorization URL in any active plan artifact.
 
-- [ ] **Step 2: Fix Copilot validation quoting**
+- [x] **Step 2: Fix Copilot validation quoting**
 
 In the same plan file, replace:
 
@@ -428,7 +428,7 @@ with:
 rg -n 'GitHub Copilot|nearest `AGENTS.md`|nested `AGENTS.md`|copilot-instructions|instructions/\\*\\.instructions|prefer AGENTS.md' .agent/ADAPTERS.md ADOPTION.md .agent/PROMPTS.md
 ```
 
-- [ ] **Step 3: Fix cross-document validation quoting**
+- [x] **Step 3: Fix cross-document validation quoting**
 
 In the same plan file, replace:
 
@@ -442,7 +442,7 @@ with:
 rg -n 'does not copy domain overlays|do not copy every overlay|\\.aider\\.conf\\.yml|current-source|MCP Authorization|Privilege risks|nearest `AGENTS.md`|GEMINI.md|context.fileName' README.md ADOPTION.md .gitignore .agent/ADAPTERS.md .agent/WORKFLOW.md .agent/SECURITY.md .agent/TEMPLATES/THREAT_MODEL.md .agent/TEMPLATES/REPO_AUDIT.md .agent/TEMPLATES/EXEC_PLAN.md .agent/PROMPTS.md
 ```
 
-- [ ] **Step 4: Validate plan artifact**
+- [x] **Step 4: Validate plan artifact**
 
 Run:
 
@@ -458,7 +458,7 @@ Expected:
 - The second `rg` command exits 0 with the updated MCP source and single-quoted `rg` commands.
 - `git diff --check` exits 0.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add docs/superpowers/plans/2026-05-11-agent-seed-v0.2.1-review-fixes.md
@@ -472,7 +472,7 @@ git commit -m "Repair v0.2.1 plan references"
 **Files:**
 - Modify as needed: `VERSION`, `CHANGELOG.md`, `ADOPTION.md`, `.agent/ADAPTERS.md`, `.agent/SECURITY.md`, `.agent/TEMPLATES/THREAT_MODEL.md`, `.agent/PROMPTS.md`, `docs/superpowers/plans/2026-05-11-agent-seed-v0.2.1-review-fixes.md`
 
-- [ ] **Step 1: Verify findings map to changed surfaces**
+- [x] **Step 1: Verify findings map to changed surfaces**
 
 Run:
 
@@ -487,7 +487,7 @@ Expected:
 - ADOPTION separates source-of-truth agent instructions from vendor bridge files.
 - The v0.2.1 plan uses single-quoted shell-safe `rg` patterns.
 
-- [ ] **Step 2: Check stale MCP references**
+- [x] **Step 2: Check stale MCP references**
 
 Run:
 
@@ -499,7 +499,7 @@ Expected:
 
 - Exit 1 with no output.
 
-- [ ] **Step 3: Check prohibited files**
+- [x] **Step 3: Check prohibited files**
 
 Run:
 
@@ -514,7 +514,7 @@ Expected:
 - No package/build/CI/tooling files.
 - No vendor-specific bridge files are added to the seed.
 
-- [ ] **Step 4: Unresolved text scan**
+- [x] **Step 4: Unresolved text scan**
 
 Run:
 
@@ -527,7 +527,7 @@ Expected:
 - Exit 1 with no accidental unresolved planning text.
 - Intentional angle-bracket template fields are not matched by this scan.
 
-- [ ] **Step 5: Version and markdown whitespace checks**
+- [x] **Step 5: Version and markdown whitespace checks**
 
 Run:
 
@@ -541,7 +541,7 @@ Expected:
 - `VERSION` and `CHANGELOG.md` both show `0.2.2`.
 - `git diff --check HEAD` exits 0.
 
-- [ ] **Step 6: Commit any consistency edits**
+- [x] **Step 6: Commit any consistency edits**
 
 If Step 1 through Step 5 required edits, run:
 
@@ -559,7 +559,7 @@ If no files changed, skip this commit.
 **Files:**
 - No content edits expected.
 
-- [ ] **Step 1: Final branch validation**
+- [x] **Step 1: Final branch validation**
 
 Run:
 
@@ -578,7 +578,7 @@ Expected:
 - No executable files.
 - No prohibited package/build/CI/vendor bridge files.
 
-- [ ] **Step 2: Merge locally**
+- [x] **Step 2: Merge locally**
 
 From the feature branch:
 
@@ -592,7 +592,7 @@ Expected:
 
 - Fast-forward merge succeeds.
 
-- [ ] **Step 3: Re-run final validation on `main`**
+- [x] **Step 3: Re-run final validation on `main`**
 
 Run the full command set from Step 1 again.
 
@@ -600,7 +600,7 @@ Expected:
 
 - Same successful result on merged `main`.
 
-- [ ] **Step 4: Push and confirm**
+- [x] **Step 4: Push and confirm**
 
 ```bash
 git push origin main
@@ -617,7 +617,7 @@ Expected:
 - If GitHub Actions still returns an empty list, record that no hosted Actions runs exist for this repo.
 - If GitHub Actions returns a run for the pushed commit, wait for it to complete and require success before cleanup.
 
-- [ ] **Step 5: Cleanup merged feature branch**
+- [x] **Step 5: Cleanup merged feature branch**
 
 ```bash
 git branch -d agent-seed-v0.2.2-review-fixups
@@ -628,6 +628,16 @@ Expected:
 - Local feature branch deletes cleanly.
 
 ---
+
+## Execution Evidence
+
+The v0.2.2 plan was executed and merged before the follow-up review.
+
+- Final merged `main` commit: `41b609e04902f1b515dfb24047cab5bda5b1c884`.
+- Remote branch checked: `origin/main`.
+- Local feature branch cleanup: `agent-seed-v0.2.2-review-fixups` deleted.
+- Hosted CI check: `gh run list --limit 3 --json databaseId,status,conclusion,headSha,workflowName` returned `[]`, so no hosted GitHub Actions workflows existed for this repository.
+- Validation evidence: clean `main`, `git diff --check HEAD` passed, executable/prohibited-file scans were empty, stale MCP scans were empty, unresolved-text scans for active artifacts were empty.
 
 ## Acceptance Criteria
 
