@@ -28,7 +28,7 @@ Use these references while implementing. They were checked on May 11, 2026; re-c
 - GitHub Copilot repository instructions and agent instructions: https://docs.github.com/en/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-repository-instructions
 - Claude Code memory and settings: https://docs.claude.com/en/docs/claude-code/memory and https://docs.claude.com/en/docs/claude-code/settings
 - Gemini CLI context files and configurable `context.fileName`: https://google-gemini.github.io/gemini-cli/docs/cli/gemini-md.html
-- MCP authorization specification: https://modelcontextprotocol.io/specification/2025-06-18/basic/authorization
+- MCP authorization latest specification, version `2025-11-25`: https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization
 - OWASP Top 10 for Agentic Applications 2026: https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
 - OWASP Agentic Skills Top 10: https://owasp.org/www-project-agentic-skills-top-10/
 - NSA/Five Eyes guidance, “Careful Adoption of Agentic AI Services”: https://www.nsa.gov/Press-Room/Press-Releases-Statements/Press-Release-View/Article/4475134/nsa-joins-the-asds-acsc-and-others-to-release-guidance-on-agentic-artificial-in/
@@ -809,7 +809,7 @@ Recommend minimal bridge files for Codex/OpenAI, Claude Code, Gemini CLI, GitHub
 Run:
 
 ```bash
-rg -n "GitHub Copilot|nearest `AGENTS.md`|nested `AGENTS.md`|copilot-instructions|instructions/\\*\\.instructions|prefer AGENTS.md" .agent/ADAPTERS.md ADOPTION.md .agent/PROMPTS.md
+rg -n 'GitHub Copilot|nearest `AGENTS.md`|nested `AGENTS.md`|copilot-instructions|instructions/\\*\\.instructions|prefer AGENTS.md' .agent/ADAPTERS.md ADOPTION.md .agent/PROMPTS.md
 git diff --check
 ```
 
@@ -837,7 +837,7 @@ git commit -m "Update Copilot adapter guidance"
 Run:
 
 ```bash
-rg -n "does not copy domain overlays|do not copy every overlay|\\.aider\\.conf\\.yml|current-source|MCP Authorization|Privilege risks|nearest `AGENTS.md`|GEMINI.md|context.fileName" README.md ADOPTION.md .gitignore .agent/ADAPTERS.md .agent/WORKFLOW.md .agent/SECURITY.md .agent/TEMPLATES/THREAT_MODEL.md .agent/TEMPLATES/REPO_AUDIT.md .agent/TEMPLATES/EXEC_PLAN.md .agent/PROMPTS.md
+rg -n 'does not copy domain overlays|do not copy every overlay|\\.aider\\.conf\\.yml|current-source|MCP Authorization|Privilege risks|nearest `AGENTS.md`|GEMINI.md|context.fileName' README.md ADOPTION.md .gitignore .agent/ADAPTERS.md .agent/WORKFLOW.md .agent/SECURITY.md .agent/TEMPLATES/THREAT_MODEL.md .agent/TEMPLATES/REPO_AUDIT.md .agent/TEMPLATES/EXEC_PLAN.md .agent/PROMPTS.md
 ```
 
 Expected:
