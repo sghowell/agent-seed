@@ -6,7 +6,7 @@ Copy this file to:
 .agent/LOCAL_CONTEXT.md
 ```
 
-Then replace the placeholders with facts about the target repository.
+Then replace the template fields with facts about the target repository.
 
 Do not invent commands or conventions. Mark unknowns clearly.
 
