@@ -169,7 +169,7 @@ Verify:
 - `WWW-Authenticate` responses include `resource_metadata` when required and include scope guidance when the server can provide it,
 - clients support both protected-resource metadata discovery mechanisms: `WWW-Authenticate` `resource_metadata` and well-known protected-resource metadata URIs,
 - authorization-server discovery supports both OAuth 2.0 Authorization Server Metadata and OpenID Connect Discovery,
-- authorization server endpoints use HTTPS except for explicitly approved local-development endpoints,
+- authorization server endpoints use HTTPS; local-development exceptions apply only to redirect URIs, not authorization server endpoints,
 - client registration uses the right approach for the deployment: pre-registration, OAuth Client ID Metadata Documents, Dynamic Client Registration fallback, or explicit user-provided client information,
 - Client ID Metadata Documents, when used, are HTTPS URLs with path components, contain required client metadata, match `client_id` exactly, validate redirect URIs, and are fetched, cached, and validated deliberately,
 - clients request the minimum required scopes and handle scope challenges from `WWW-Authenticate` responses as authoritative for the current request,
@@ -206,7 +206,7 @@ Transport credential model: <HTTP authorization | STDIO environment credentials 
 Protected resource metadata discovery: <WWW-Authenticate resource_metadata | well-known URI | both | not applicable>
 Protected resource metadata authorization_servers: <present with one server | present with multiple servers and selection policy | absent and rejected | not applicable>
 Authorization server discovery: <OAuth metadata | OpenID Connect discovery | both | not applicable>
-Authorization server endpoint security: <HTTPS endpoints | approved local-development endpoint | not applicable>
+Authorization server endpoint security: <HTTPS endpoints | non-HTTPS endpoint rejected | not applicable>
 Client registration approach: <pre-registered | Client ID Metadata Document | Dynamic Client Registration | user-provided | not applicable>
 Client ID Metadata Document validation: <validation plan or not applicable>
 Requested scopes: <scopes and least-privilege rationale or not applicable>

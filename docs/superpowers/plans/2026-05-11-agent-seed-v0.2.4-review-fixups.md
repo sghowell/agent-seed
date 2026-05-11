@@ -32,7 +32,7 @@ Use these references while implementing. They were checked on May 11, 2026; re-c
 - `.agent/SECURITY.md`: require HTTPS authorization server endpoints, keep localhost allowance only for redirect URIs, and require advertised `S256` support when technically capable.
 - `.agent/TEMPLATES/THREAT_MODEL.md`: mirror the HTTPS endpoint and `S256` support fields.
 - `.agent/PROMPTS.md`: ask MCP reviewers to check HTTPS endpoint requirements and advertised `S256` support explicitly.
-- `docs/superpowers/plans/2026-05-11-agent-seed-v0.2.3-review-fixups.md`: add final v0.2.3 execution evidence.
+- `docs/superpowers/plans/2026-05-11-agent-seed-v0.2.3-review-fixups.md`: add final v0.2.3 execution evidence and align stale MCP snippets.
 - `docs/superpowers/plans/2026-05-11-agent-seed-v0.2.4-review-fixups.md`: mark this plan executed and add final v0.2.4 execution evidence during closeout.
 
 ### Do Not Create
@@ -52,7 +52,7 @@ Use these references while implementing. They were checked on May 11, 2026; re-c
 **Files:**
 - No content edits expected.
 
-- [ ] **Step 1: Confirm clean `main`**
+- [x] **Step 1: Confirm clean `main`**
 
 Run:
 
@@ -69,7 +69,7 @@ Expected:
 - `main` is aligned with `origin/main`.
 - No uncommitted user changes are present.
 
-- [ ] **Step 2: Create the implementation branch**
+- [x] **Step 2: Create the implementation branch**
 
 Run:
 
@@ -89,7 +89,7 @@ Expected:
 - Modify: `VERSION`
 - Modify: `CHANGELOG.md`
 
-- [ ] **Step 1: Bump `VERSION`**
+- [x] **Step 1: Bump `VERSION`**
 
 Replace the entire file with:
 
@@ -97,7 +97,7 @@ Replace the entire file with:
 0.2.4
 ```
 
-- [ ] **Step 2: Add `CHANGELOG.md` section**
+- [x] **Step 2: Add `CHANGELOG.md` section**
 
 Add this section above `## 0.2.3`:
 
@@ -114,7 +114,7 @@ Included:
 - recorded v0.2.3 execution evidence.
 ```
 
-- [ ] **Step 3: Validate version metadata**
+- [x] **Step 3: Validate version metadata**
 
 Run:
 
@@ -129,7 +129,7 @@ Expected:
 - `CHANGELOG.md` has `0.2.4` above `0.2.3`.
 - `git diff --check` exits 0.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 Run:
 
@@ -151,7 +151,7 @@ Expected:
 - Modify: `.agent/TEMPLATES/THREAT_MODEL.md`
 - Modify: `.agent/PROMPTS.md`
 
-- [ ] **Step 1: Tighten `.agent/SECURITY.md` endpoint and PKCE checks**
+- [x] **Step 1: Tighten `.agent/SECURITY.md` endpoint and PKCE checks**
 
 In `.agent/SECURITY.md`, replace the existing bullet that permits local-development authorization server endpoint exceptions with:
 
@@ -174,7 +174,7 @@ with:
 - clients use the `S256` code challenge method when technically capable,
 ```
 
-- [ ] **Step 2: Tighten `.agent/TEMPLATES/THREAT_MODEL.md` fields**
+- [x] **Step 2: Tighten `.agent/TEMPLATES/THREAT_MODEL.md` fields**
 
 In `.agent/TEMPLATES/THREAT_MODEL.md`, replace the existing `Authorization server endpoint security` field that permits local-development authorization server endpoints with:
 
@@ -194,7 +194,7 @@ with:
 PKCE support discovery: <code_challenge_methods_supported metadata source, S256 advertisement, and refusal behavior or not applicable>
 ```
 
-- [ ] **Step 3: Tighten `.agent/PROMPTS.md` MCP review prompt**
+- [x] **Step 3: Tighten `.agent/PROMPTS.md` MCP review prompt**
 
 In `.agent/PROMPTS.md`, replace:
 
@@ -220,7 +220,7 @@ with:
 PKCE metadata discovery, advertised `S256` support, `S256` use
 ```
 
-- [ ] **Step 4: Validate MCP corrections**
+- [x] **Step 4: Validate MCP corrections**
 
 Run:
 
@@ -236,7 +236,7 @@ Expected:
 - The second `rg` command exits 1 with no stale local-development authorization server endpoint exception.
 - `git diff --check` exits 0.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 Run:
 
@@ -256,7 +256,7 @@ Expected:
 **Files:**
 - Modify: `docs/superpowers/plans/2026-05-11-agent-seed-v0.2.3-review-fixups.md`
 
-- [ ] **Step 1: Add v0.2.3 execution evidence**
+- [x] **Step 1: Add v0.2.3 execution evidence and align stale MCP snippets**
 
 Add this section immediately before `## Acceptance Criteria`:
 
@@ -272,7 +272,9 @@ The v0.2.3 plan was executed and merged before the follow-up review.
 - Validation evidence: clean `main`, `git diff --check HEAD` passed, executable/prohibited-file scans were empty, stale MCP scans were empty, unresolved-text scans for active artifacts were empty.
 ```
 
-- [ ] **Step 2: Validate v0.2.3 execution evidence**
+In the same file, update any v0.2.3 MCP snippets that still permit local-development authorization server endpoint exceptions so they match the v0.2.4 HTTPS-only authorization endpoint guidance.
+
+- [x] **Step 2: Validate v0.2.3 execution evidence**
 
 Run:
 
@@ -288,7 +290,7 @@ Expected:
 - The second `rg` command exits 1 with no unchecked v0.2.3 checklist entries.
 - `git diff --check` exits 0.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 Run:
 
@@ -314,7 +316,7 @@ Expected:
 - Review: `.agent/PROMPTS.md`
 - Review: `docs/superpowers/plans/2026-05-11-agent-seed-v0.2.3-review-fixups.md`
 
-- [ ] **Step 1: Mark v0.2.4 checklist steps complete**
+- [x] **Step 1: Mark v0.2.4 checklist steps complete**
 
 In `docs/superpowers/plans/2026-05-11-agent-seed-v0.2.4-review-fixups.md`, replace every unchecked checkbox prefix with a checked checkbox prefix:
 
@@ -325,7 +327,7 @@ checked: - [x]
 
 Only change checkbox prefixes in this file. Do not change command snippets or explanatory prose.
 
-- [ ] **Step 2: Verify all findings map to changed surfaces**
+- [x] **Step 2: Verify all findings map to changed surfaces**
 
 Run:
 
@@ -339,7 +341,7 @@ Expected:
 - MCP HTTPS endpoint and `S256` support corrections appear in security, template, and prompt surfaces.
 - v0.2.3 plan evidence and v0.2.4 checked boxes are present.
 
-- [ ] **Step 3: Check stale or prohibited text**
+- [x] **Step 3: Check stale or prohibited text**
 
 Run:
 
@@ -352,7 +354,7 @@ Expected:
 
 - Both `rg` commands exit 1 with no output.
 
-- [ ] **Step 4: Check prohibited files and whitespace**
+- [x] **Step 4: Check prohibited files and whitespace**
 
 Run:
 
@@ -369,7 +371,7 @@ Expected:
 - No vendor-specific bridge files are added to the seed.
 - `git diff --check HEAD` exits 0.
 
-- [ ] **Step 5: Commit consistency edits**
+- [x] **Step 5: Commit consistency edits**
 
 Run:
 
@@ -389,7 +391,7 @@ Expected:
 **Files:**
 - Modify after push: `docs/superpowers/plans/2026-05-11-agent-seed-v0.2.4-review-fixups.md`
 
-- [ ] **Step 1: Final branch validation**
+- [x] **Step 1: Final branch validation**
 
 Run:
 
@@ -408,7 +410,7 @@ Expected:
 - No executable files.
 - No prohibited package/build/CI/vendor bridge files.
 
-- [ ] **Step 2: Merge locally**
+- [x] **Step 2: Merge locally**
 
 From the feature branch, run:
 
@@ -422,7 +424,7 @@ Expected:
 
 - Fast-forward merge succeeds.
 
-- [ ] **Step 3: Re-run final validation on `main`**
+- [x] **Step 3: Re-run final validation on `main`**
 
 Run the full command set from Step 1 again.
 
@@ -430,7 +432,7 @@ Expected:
 
 - Same successful result on merged `main`.
 
-- [ ] **Step 4: Push and confirm**
+- [x] **Step 4: Push and confirm**
 
 Run:
 
@@ -449,7 +451,7 @@ Expected:
 - If GitHub Actions still returns an empty list, record that no hosted Actions runs exist for this repo.
 - If GitHub Actions returns a run for the pushed commit, wait for it to complete and require success before cleanup.
 
-- [ ] **Step 5: Add v0.2.4 execution evidence**
+- [x] **Step 5: Add v0.2.4 execution evidence**
 
 After push confirmation, record the pushed implementation tip before creating the evidence commit:
 
@@ -484,7 +486,7 @@ Expected:
 - The v0.2.4 plan has final execution evidence.
 - Remote `main` points to the execution-evidence commit.
 
-- [ ] **Step 6: Cleanup merged feature branch**
+- [x] **Step 6: Cleanup merged feature branch**
 
 Run:
 
@@ -510,7 +512,7 @@ v0.2.4 is complete when:
 - `.agent/SECURITY.md` requires HTTPS authorization server endpoints and scopes localhost exceptions only to redirect URIs.
 - `.agent/TEMPLATES/THREAT_MODEL.md` has a non-HTTPS authorization endpoint rejection field.
 - `.agent/SECURITY.md`, `.agent/TEMPLATES/THREAT_MODEL.md`, and `.agent/PROMPTS.md` require or ask for advertised `S256` support when clients are technically capable of `S256`.
-- `docs/superpowers/plans/2026-05-11-agent-seed-v0.2.3-review-fixups.md` includes v0.2.3 execution evidence.
+- `docs/superpowers/plans/2026-05-11-agent-seed-v0.2.3-review-fixups.md` includes v0.2.3 execution evidence and no stale local-development authorization server endpoint exception.
 - `docs/superpowers/plans/2026-05-11-agent-seed-v0.2.4-review-fixups.md` has no unchecked plan steps and includes final v0.2.4 execution evidence.
 - No stale June 2025 MCP authorization references are present.
 - No executable, package, build, CI, lockfile, generated-doc, or vendor-specific root bridge files are added.
