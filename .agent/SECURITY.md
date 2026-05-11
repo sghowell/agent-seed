@@ -61,6 +61,23 @@ When using tool or MCP-style integrations:
 - avoid chaining tools in ways that bypass approval boundaries,
 - and review server, skill, prompt, hook, or connector changes as executable supply chain.
 
+### MCP Authorization Checklist
+
+For HTTP-based MCP servers and clients, verify:
+
+- authorization follows the current MCP authorization specification when supported,
+- resource indicators identify the intended MCP server,
+- access tokens are audience-bound to the MCP server that receives them,
+- MCP servers reject tokens issued for other resources,
+- tokens are not passed through to downstream services,
+- access tokens are sent in authorization headers rather than URI query strings,
+- authorization and protected-resource metadata discovery are handled deliberately,
+- PKCE protects authorization-code flows,
+- redirect URIs are exact-registered and limited to HTTPS or localhost,
+- refresh tokens and stored credentials are protected and rotated where supported,
+- invalid or expired tokens receive the expected authorization failure response,
+- logs, traces, screenshots, and final summaries do not expose tokens.
+
 ## Secrets And Sensitive Files
 
 Agents should not read, print, summarize, move, or transform secrets unless the task requires it and the user or maintainer has approved the access.

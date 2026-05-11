@@ -39,6 +39,19 @@ Tool or MCP server: <scope and permissions>
 Tool or MCP server: <scope and permissions>
 ```
 
+## MCP Authorization
+
+```text
+HTTP-based MCP involved: <yes/no>
+Authorization spec version: <version/date or not applicable>
+Resource indicator: <intended MCP server resource or not applicable>
+Token audience validation: <validation plan or not applicable>
+Token passthrough prevented: <yes/no/not applicable>
+PKCE required: <yes/no/not applicable>
+Redirect URI policy: <exact HTTPS/localhost policy or not applicable>
+Token storage and logging controls: <controls>
+```
+
 ## Data Sources
 
 ```text
