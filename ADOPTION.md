@@ -225,7 +225,7 @@ Common bridge files include:
 - `GEMINI.md` for Gemini CLI,
 - `.github/copilot-instructions.md` and `.github/instructions/*.instructions.md` for GitHub Copilot,
 - Cursor project rules,
-- Aider read-file configuration.
+- `.aider.conf.yml` for shared Aider read-file configuration.
 
 Bridge files should point back to `AGENTS.md` and `.agent/`, not fork policy into inconsistent copies.
 

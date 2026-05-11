@@ -43,4 +43,7 @@ target/
 # Local agent tool state
 .claude/settings.local.json
 .gemini/.cache/
-.aider*
+.aider.chat.history.md
+.aider.input.history
+.aider.tags.cache.v4/
+!.aider.conf.yml

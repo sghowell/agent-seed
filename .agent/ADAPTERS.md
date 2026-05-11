@@ -93,7 +93,17 @@ Use the IDE's project rules or instruction files as thin adapters. Keep:
 
 ## Aider
 
-Configure `AGENTS.md` as a read file when supported, and include `.agent/LOCAL_CONTEXT.md` and selected `.agent/*` files for large or high-risk tasks.
+Configure Aider to read `AGENTS.md` through shared project configuration when the target repository uses Aider.
+
+Recommended `.aider.conf.yml` bridge:
+
+```yaml
+read:
+  - AGENTS.md
+  - .agent/LOCAL_CONTEXT.md
+```
+
+High-rigor tasks may add selected `.agent/*` files to Aider's read context. Do not ignore `.aider.conf.yml`; it can be shared repository guidance. Ignore only local chat history, input history, tags caches, and other machine-local Aider state.
 
 For short tasks, ensure the Aider context includes:
 
