@@ -70,9 +70,21 @@ Use `.geminiignore` to exclude private state, generated artifacts, large irrelev
 GitHub Copilot repositories may use:
 
 ```text
+AGENTS.md
+nested AGENTS.md files
 .github/copilot-instructions.md
 .github/instructions/*.instructions.md
+root CLAUDE.md or GEMINI.md, when a single bridge file is preferred
 ```
+
+Current Copilot guidance supports repository-wide custom instructions, path-specific instructions, and agent instructions. `AGENTS.md` files can live anywhere in the repository; when Copilot is working, the nearest `AGENTS.md` file in the directory tree takes precedence.
+
+Recommended default:
+
+- use `AGENTS.md` and nested `AGENTS.md` files for agent instructions,
+- use `.github/copilot-instructions.md` only when the repository needs Copilot-specific repository-wide instructions,
+- use `.github/instructions/*.instructions.md` only for path-specific Copilot behavior that cannot be expressed cleanly through nested `AGENTS.md`,
+- keep `CLAUDE.md` and `GEMINI.md` as optional bridges for ecosystems that require those names.
 
 Recommended bridge pattern:
 

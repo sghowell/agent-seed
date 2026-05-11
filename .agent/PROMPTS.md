@@ -145,7 +145,7 @@ Use .agent/REVIEW_PROTOCOL.md. Two reviewers disagree. Preserve both positions, 
 ## 24. Create Adapter Guidance
 
 ```text
-Use .agent/ADAPTERS.md. Audit which agent ecosystems this repository actually uses. Recommend minimal bridge files for Codex/OpenAI, Claude Code, Gemini CLI, GitHub Copilot, Cursor, Aider, or generic agents. Keep AGENTS.md and .agent/ as the source of truth and avoid duplicating long policy blocks.
+Use .agent/ADAPTERS.md. Audit which agent ecosystems this repository actually uses. Recommend minimal bridge files for Codex/OpenAI, Claude Code, Gemini CLI, GitHub Copilot, Cursor, Aider, or generic agents. For Copilot, prefer AGENTS.md and nested AGENTS.md before adding .github bridge files. Keep AGENTS.md and .agent/ as the source of truth and avoid duplicating long policy blocks.
 ```
 
 ## 25. Audit Nested Instruction Coverage

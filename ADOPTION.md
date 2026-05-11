@@ -223,7 +223,7 @@ Common bridge files include:
 
 - `CLAUDE.md` for Claude Code,
 - `GEMINI.md` for Gemini CLI,
-- `.github/copilot-instructions.md` and `.github/instructions/*.instructions.md` for GitHub Copilot,
+- `AGENTS.md`, nested `AGENTS.md`, `.github/copilot-instructions.md`, and `.github/instructions/*.instructions.md` for GitHub Copilot,
 - Cursor project rules,
 - `.aider.conf.yml` for shared Aider read-file configuration.
 
