@@ -14,6 +14,8 @@ It provides reusable repository guidance for:
 
 This is not an agent platform, installer, skill pack, CI framework, or replacement for project-specific tooling. It is a seed: small enough to copy into a repository, concrete enough to improve agent behavior, and easy to adapt to local conventions.
 
+This repository's own maintenance workflow is Codex-first and `AGENTS.md`-first. Hermes Agent, Pi, and Claude Code are the next-priority agents. OpenCode, Gemini CLI, Copilot, Cursor, Aider, and everything else are significantly lower priority and should not constrain defaults unless a target repository explicitly elevates them. When portability conflicts with Codex strength for this seed, Codex strength wins.
+
 ## Why This Exists
 
 Coding agents work better when repositories provide clear local guidance. Without that guidance, users often need to repeat the same instructions at the start of each session:
@@ -69,6 +71,7 @@ AGENTS.md
 .agent/WORKFLOW.md
 .agent/STANDARDS.md
 .agent/DONE.md
+.agent/GIT_AND_MR_WORKFLOW.md
 .agent/PROMPTS.md
 .agent/LOCAL_CONTEXT.example.md
 ```
@@ -98,6 +101,7 @@ TARGET_REPOSITORY/
     WORKFLOW.md
     STANDARDS.md
     DONE.md
+    GIT_AND_MR_WORKFLOW.md
     QUALITY_BAR.md
     SECURITY.md
     ADAPTERS.md
@@ -154,6 +158,7 @@ cp AGENTS.md /path/to/target-repo/AGENTS.md
 cp .agent/WORKFLOW.md /path/to/target-repo/.agent/WORKFLOW.md
 cp .agent/STANDARDS.md /path/to/target-repo/.agent/STANDARDS.md
 cp .agent/DONE.md /path/to/target-repo/.agent/DONE.md
+cp .agent/GIT_AND_MR_WORKFLOW.md /path/to/target-repo/.agent/GIT_AND_MR_WORKFLOW.md
 cp .agent/PROMPTS.md /path/to/target-repo/.agent/PROMPTS.md
 cp .agent/LOCAL_CONTEXT.example.md /path/to/target-repo/.agent/LOCAL_CONTEXT.md
 cp -R .agent/TEMPLATES /path/to/target-repo/.agent/TEMPLATES
@@ -198,6 +203,8 @@ The compact operating agreement. This is the first file a coding agent should re
 
 The practical workflow for non-trivial changes: inspect, plan, implement, validate, review, summarize. It includes security and specialist-review triggers for high-risk work.
 
+Use `.agent/GIT_AND_MR_WORKFLOW.md` when the task includes branches, commits, pull requests, merge requests, merges, pushes, hosted checks, or cleanup.
+
 ### `.agent/STANDARDS.md`
 
 General engineering standards for correctness, maintainability, tests, dependencies, documentation, performance, security, infrastructure, scientific work, and agent behavior.
@@ -205,6 +212,10 @@ General engineering standards for correctness, maintainability, tests, dependenc
 ### `.agent/DONE.md`
 
 A clear definition of done, including evidence, validation, review, reproducibility, risk, and final response requirements.
+
+### `.agent/GIT_AND_MR_WORKFLOW.md`
+
+Branch, commit, pull request, merge request, merge, push, hosted-check, and cleanup workflow for reviewable closeout.
 
 ### `.agent/QUALITY_BAR.md`
 
@@ -216,7 +227,7 @@ Agentic AI, tool, MCP, secrets, memory/context, supply-chain, autonomy, and audi
 
 ### `.agent/ADAPTERS.md`
 
-How to adapt the seed to Codex, Claude Code, Gemini CLI, GitHub Copilot, Cursor, Aider, and generic agents without duplicating conflicting instructions.
+How to adapt the seed to Codex/OpenAI agents, Hermes Agent, Pi, Claude Code, OpenCode, Gemini CLI, GitHub Copilot, Cursor, Aider, and generic agents without optimizing for unused ecosystems or duplicating conflicting instructions.
 
 ### `.agent/REVIEW_PROTOCOL.md`
 
@@ -307,9 +318,9 @@ Remove sections that do not apply. Add stricter standards only when the reposito
 
 ## Adapter Guidance
 
-Keep `AGENTS.md` as the source-of-truth contract when possible. Use `.agent/ADAPTERS.md` to create lightweight bridge files for tools that need different filenames, such as `CLAUDE.md`, `GEMINI.md`, or Copilot instruction files.
+Keep `AGENTS.md` as the source-of-truth contract when possible. Use `.agent/ADAPTERS.md` to identify the primary/default agent, second-priority agents, and lower-priority agents a target repository actually uses, then create lightweight bridge files only for tools that need different filenames, such as `CLAUDE.md`, `GEMINI.md`, or Copilot instruction files.
 
-Do not add vendor-specific files to this seed by default. Target repositories should add them only when they actually use that ecosystem and can keep the bridge file synchronized with the seed guidance.
+Do not add vendor-specific files to this seed by default. Target repositories should add them only when they actually use that ecosystem and can keep the bridge file synchronized with the seed guidance. It is better to have no bridge for an unused tool than to let irrelevant tooling shape the repository's defaults.
 
 ## Maintenance Philosophy
 

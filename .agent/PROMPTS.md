@@ -145,7 +145,13 @@ Use .agent/REVIEW_PROTOCOL.md. Two reviewers disagree. Preserve both positions, 
 ## 24. Create Adapter Guidance
 
 ```text
-Use .agent/ADAPTERS.md. Audit which agent ecosystems this repository actually uses. Recommend minimal bridge files for Codex/OpenAI, Claude Code, Gemini CLI, GitHub Copilot, Cursor, Aider, or generic agents. For Copilot, prefer AGENTS.md and nested AGENTS.md before adding .github bridge files. Keep AGENTS.md and .agent/ as the source of truth and avoid duplicating long policy blocks.
+Use .agent/ADAPTERS.md. Audit which agent ecosystem is primary/default for this repository, which agents are second priority, and which significantly lower-priority ecosystems are actually used. Recommend minimal source-of-truth or bridge files for Codex/OpenAI agents, Hermes Agent, Pi, Claude Code, OpenCode, Gemini CLI, GitHub Copilot, Cursor, Aider, or generic agents. Prefer AGENTS.md and nested AGENTS.md for agents that read them directly. For unused ecosystems, recommend no files. If broad compatibility conflicts with the primary/default agent's effectiveness, prefer the primary/default agent and document the tradeoff. Keep lower-priority ecosystems from constraining defaults unless explicitly elevated. Keep AGENTS.md and .agent/ as the source of truth and avoid duplicating long policy blocks.
+```
+
+## 24a. Close Out Git Work
+
+```text
+Use .agent/GIT_AND_MR_WORKFLOW.md. Capture the intended dirty worktree on a feature branch, stage only in-scope files unless I confirm all dirty work belongs, commit with concise descriptive messages, run relevant validation, merge according to local policy, push to the remote, verify hosted checks when they exist, and clean up only after the merged remote state is verified.
 ```
 
 ## 25. Audit Nested Instruction Coverage
@@ -157,7 +163,7 @@ Use .agent/NESTED_GUIDANCE.md. Audit this monorepo for subtrees that need nested
 ## 26. Convert Existing Agent Instructions
 
 ```text
-Convert existing CLAUDE.md, GEMINI.md, Copilot instructions, Cursor rules, or Aider guidance into AGENTS.md and .agent/ without losing local facts. Keep vendor-specific files as thin adapters that point back to the source-of-truth guidance.
+Convert existing CLAUDE.md, GEMINI.md, Copilot instructions, Cursor rules, Aider guidance, Hermes/OpenCode/Pi context files, or other agent instructions into AGENTS.md and .agent/ without losing local facts. Keep ecosystem-specific files only when that ecosystem is actually used, and keep them as thin adapters that point back to the source-of-truth guidance.
 ```
 
 ## 27. Adopt Domain Overlays

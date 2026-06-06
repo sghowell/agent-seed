@@ -64,6 +64,38 @@ Agent/tool identity: <what identity agents use, if any>
 MCP/tool servers: <approved servers and scope>
 ```
 
+## Supported Agent Ecosystems
+
+List only the agents and coding tools maintainers actually use. Do not add bridge files or workflow rules for unused ecosystems just to be comprehensive.
+
+```text
+Primary/default agent: <Codex/OpenAI, Hermes Agent, Claude Code, Pi, OpenCode, Gemini CLI, GitHub Copilot, Cursor, Aider, other, or unknown>
+Second-priority agents/tools: <Codex/OpenAI, Hermes Agent, Pi, Claude Code, OpenCode, Gemini CLI, GitHub Copilot, Cursor, Aider, other>
+Lower-priority agents/tools: <agents/tools used occasionally or in narrow contexts>
+Primary source of truth: <AGENTS.md/.agent/other>
+Bridge files intentionally present: <CLAUDE.md, GEMINI.md, .github/copilot-instructions.md, opencode.json, other, or none>
+Unused or deferred ecosystems: <tools not optimized for and why>
+Adapter behavior checked on: <date and source, or not checked>
+```
+
+## Git And Review Workflow
+
+Record the repository's real branch, commit, PR/MR, merge, push, and cleanup expectations. Use `.agent/GIT_AND_MR_WORKFLOW.md` as the reusable baseline and customize this section with local facts.
+
+```text
+Default branch: <main/master/other>
+Feature branch naming: <pattern or not defined>
+Commit style: <convention or not defined>
+PR/MR required before merge: <yes/no/conditional/unknown>
+Default PR/MR state: <draft/ready/not defined>
+Merge strategy: <fast-forward/merge commit/squash/rebase/platform-managed/not defined>
+Local pre-push checks: <commands or not defined>
+Hosted checks/CI: <system and required checks, or not defined>
+Post-merge validation: <commands or not defined>
+Branch cleanup: <local/remote policy or not defined>
+Release notes or changelog: <when required or not defined>
+```
+
 ## Canonical Commands
 
 Use real commands only.

@@ -55,6 +55,7 @@ Docs checks: <summary>
 Benchmarks: <summary>
 Security/dependency checks: <summary>
 Review requirements: <summary>
+Git and PR/MR workflow: <summary>
 ```
 
 ## 5. Existing Agent Guidance
@@ -62,9 +63,15 @@ Review requirements: <summary>
 ```text
 AGENTS.md: <present/missing and summary>
 .agent/: <present/missing and summary>
-Adapter files: <CLAUDE/GEMINI/Copilot/Cursor/Aider/other>
+Primary/default agent: <Codex/Hermes/Claude/Pi/OpenCode/Gemini/Copilot/Cursor/Aider/other/unknown>
+Second-priority agents: <agents or none/unknown>
+Lower-priority agents: <agents or none/unknown>
+Supported agent ecosystems: <Codex/Hermes/Claude/Pi/OpenCode/Gemini/Copilot/Cursor/Aider/other/unknown>
+Instruction or bridge files: <AGENTS/CLAUDE/Hermes/OpenCode/Pi/GEMINI/Copilot/Cursor/Aider/other/none>
+Unused or deferred ecosystems: <tools intentionally not supported>
 Nested guidance: <present/missing and scope>
 Other guidance files: <summary>
+Git workflow guidance: <present/missing and summary>
 ```
 
 ## 6. Agentic Security Readiness
@@ -157,6 +164,8 @@ Risk identification: <rating>
 Definition of done: <rating>
 Agentic security: <rating>
 Adapter guidance: <rating>
+Adapter relevance: <rating>
+Git and PR/MR workflow: <rating>
 Nested guidance: <rating>
 Domain overlays: <rating>
 current-source refresh guidance: <rating>
@@ -180,7 +189,12 @@ Recommended adoption mode: <minimal | standard | reference-only | high-rigor>
 Files to copy or update: <files>
 Local customizations needed: <customizations>
 Domain overlays to adopt: <overlays>
+Primary/default agent: <agent or unknown>
+Second-priority agents: <agents or none/unknown>
+Lower-priority agents: <agents or none/unknown>
+Agent ecosystems to support: <ecosystems>
 Adapter files to create: <adapter files or none>
+Git workflow customizations: <branch/commit/PR/MR/merge/push/cleanup customizations or none>
 Nested guidance to add: <paths or none>
 current-source refresh needs: <sources or none>
 ```

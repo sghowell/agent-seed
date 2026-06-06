@@ -18,6 +18,7 @@ Copy only:
 AGENTS.md
 .agent/WORKFLOW.md
 .agent/DONE.md
+.agent/GIT_AND_MR_WORKFLOW.md
 .agent/LOCAL_CONTEXT.example.md
 ```
 
@@ -42,6 +43,7 @@ AGENTS.md
 .agent/WORKFLOW.md
 .agent/STANDARDS.md
 .agent/DONE.md
+.agent/GIT_AND_MR_WORKFLOW.md
 .agent/PROMPTS.md
 .agent/LOCAL_CONTEXT.example.md
 .agent/TEMPLATES/
@@ -87,6 +89,7 @@ AGENTS.md
 .agent/WORKFLOW.md
 .agent/STANDARDS.md
 .agent/DONE.md
+.agent/GIT_AND_MR_WORKFLOW.md
 .agent/QUALITY_BAR.md
 .agent/SECURITY.md
 .agent/REVIEW_PROTOCOL.md
@@ -119,6 +122,7 @@ cp AGENTS.md /path/to/target-repo/AGENTS.md
 cp .agent/WORKFLOW.md /path/to/target-repo/.agent/WORKFLOW.md
 cp .agent/STANDARDS.md /path/to/target-repo/.agent/STANDARDS.md
 cp .agent/DONE.md /path/to/target-repo/.agent/DONE.md
+cp .agent/GIT_AND_MR_WORKFLOW.md /path/to/target-repo/.agent/GIT_AND_MR_WORKFLOW.md
 cp .agent/PROMPTS.md /path/to/target-repo/.agent/PROMPTS.md
 cp .agent/LOCAL_CONTEXT.example.md /path/to/target-repo/.agent/LOCAL_CONTEXT.md
 cp -R .agent/TEMPLATES /path/to/target-repo/.agent/TEMPLATES
@@ -129,6 +133,7 @@ For high-rigor adoption, copy high-rigor core files and only the relevant overla
 ```bash
 cp .agent/QUALITY_BAR.md /path/to/target-repo/.agent/QUALITY_BAR.md
 cp .agent/SECURITY.md /path/to/target-repo/.agent/SECURITY.md
+cp .agent/GIT_AND_MR_WORKFLOW.md /path/to/target-repo/.agent/GIT_AND_MR_WORKFLOW.md
 cp .agent/REVIEW_PROTOCOL.md /path/to/target-repo/.agent/REVIEW_PROTOCOL.md
 cp .agent/ADAPTERS.md /path/to/target-repo/.agent/ADAPTERS.md
 cp .agent/NESTED_GUIDANCE.md /path/to/target-repo/.agent/NESTED_GUIDANCE.md
@@ -213,21 +218,25 @@ Select only overlays that match real repository work:
 
 If an overlay does not apply, do not copy it just because it exists.
 
-### 6. Select Adapter Files
+### 6. Select Relevant Agent Surfaces
 
-Use `.agent/ADAPTERS.md` to decide which instruction surfaces the target repository needs.
+Use `.agent/ADAPTERS.md` to decide which instruction surfaces the target repository actually needs.
 
-Keep `AGENTS.md` and nested `AGENTS.md` files as source-of-truth agent instructions when the ecosystem supports them. Add vendor-specific bridge files only when maintainers use that ecosystem and can keep the bridge synchronized.
+Start from the maintainers' real workflows, not from a checklist of every available agent. Record the primary/default agent, second-priority agents, and any significantly lower-priority active ecosystems in `.agent/LOCAL_CONTEXT.md`, then add only the shared or bridge files those ecosystems need. If broad compatibility conflicts with the primary/default agent's effectiveness, prefer the primary/default agent and document the tradeoff.
 
-Common source-of-truth and bridge surfaces include:
+Keep `AGENTS.md` and nested `AGENTS.md` files as the source-of-truth instructions for AGENTS-compatible agents. This is the default path for Codex/OpenAI agents, Hermes Agent, Pi, OpenCode, and other agents that directly load `AGENTS.md`.
 
-- `AGENTS.md` and nested `AGENTS.md` files for GitHub Copilot agent instructions and other compatible agents,
-- `.github/copilot-instructions.md` for Copilot-specific repository-wide instructions,
-- `.github/instructions/*.instructions.md` for Copilot path-specific instructions,
-- `CLAUDE.md` for Claude Code bridge guidance,
-- `GEMINI.md` for Gemini CLI bridge guidance,
-- Cursor project rules,
-- `.aider.conf.yml` for shared Aider read-file configuration.
+Add ecosystem-specific bridge files only when maintainers use that ecosystem and can keep the bridge synchronized. Common surfaces include:
+
+- `AGENTS.md` and nested `AGENTS.md` files for Codex/OpenAI agents, Hermes Agent, Pi, OpenCode, and other AGENTS-compatible agents,
+- `CLAUDE.md` for Claude Code bridge guidance, usually importing or pointing back to `AGENTS.md`,
+- `GEMINI.md` for Gemini CLI bridge guidance, when Gemini CLI is used,
+- `.github/copilot-instructions.md` for Copilot-specific repository-wide instructions, when Copilot is used,
+- `.github/instructions/*.instructions.md` for Copilot path-specific instructions, when Copilot is used and nested `AGENTS.md` is not enough,
+- Cursor project rules, when Cursor is used,
+- `.aider.conf.yml` for shared Aider read-file configuration, when Aider is used.
+
+Do not add Copilot, Gemini, Cursor, Aider, or other vendor-specific files just to appear comprehensive. Unused ecosystems should be left absent or explicitly marked deferred in `.agent/LOCAL_CONTEXT.md`.
 
 Vendor-specific bridge files should point back to `AGENTS.md` and `.agent/`, not fork policy into inconsistent copies.
 
@@ -307,14 +316,15 @@ Prioritize these fields:
 1. Canonical commands.
 2. Repository structure.
 3. Testing expectations.
-4. Planning triggers.
-5. Known risky areas.
-6. Performance-sensitive areas.
-7. Security-sensitive areas.
-8. Active domain overlays.
-9. Specialist review lanes.
-10. Documentation expectations.
-11. Final response format.
+4. Git, PR/MR, merge, push, and cleanup workflow.
+5. Planning triggers.
+6. Known risky areas.
+7. Performance-sensitive areas.
+8. Security-sensitive areas.
+9. Active domain overlays.
+10. Specialist review lanes.
+11. Documentation expectations.
+12. Final response format.
 
 ## What Not To Customize Too Early
 
@@ -379,6 +389,7 @@ Use this split:
 - `.agent/WORKFLOW.md`: process for substantial work.
 - `.agent/STANDARDS.md`: engineering standards.
 - `.agent/DONE.md`: completion criteria.
+- `.agent/GIT_AND_MR_WORKFLOW.md`: branch, commit, PR/MR, merge, push, and cleanup workflow.
 - `.agent/QUALITY_BAR.md`: high-rigor expectations.
 - `.agent/SECURITY.md`: agentic AI and tool security.
 - `.agent/REVIEW_PROTOCOL.md`: review layers and specialist lanes.

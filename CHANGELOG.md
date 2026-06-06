@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.2.5
+
+Corrected adapter adoption guidance so the seed optimizes for maintainers' actual agent workflows instead of irrelevant vendor ecosystems.
+
+Included:
+
+- reusable git and PR/MR workflow guidance for branch, commit, review, merge, push, hosted-check, and cleanup work,
+- standard adoption references for `.agent/GIT_AND_MR_WORKFLOW.md`,
+- local-context fields for branch naming, commit style, PR/MR requirements, merge strategy, hosted checks, and cleanup,
+- explicit relevance gate for agent adapter files,
+- first-class mention of Codex/OpenAI agents, Hermes Agent, Claude Code, Pi, and OpenCode,
+- primary/default agent fields so repositories can weight guidance toward the most-used agent,
+- second-priority agent fields and local context for Hermes Agent, Pi, and Claude Code,
+- explicit lower-priority classification for other ecosystems so they do not constrain defaults,
+- project-local context recording that `agent-seed` itself is Codex-first and AGENTS.md-first,
+- explicit willingness to prefer Codex strength over broad multi-agent compatibility for this seed,
+- demotion of Copilot-specific files to optional bridges only when Copilot is actually used,
+- local-context and repo-audit fields for supported, unused, and deferred agent ecosystems.
+
 ## 0.2.4
 
 Corrected the v0.2.3 review-fix release after a follow-up review.

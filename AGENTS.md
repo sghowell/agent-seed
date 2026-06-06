@@ -19,6 +19,7 @@ This file is the compact operating guide for agents working in the repository. F
 - Treat `.agent/QUALITY_BAR.md` as the standard for high-rigor work; generic guidance is a floor, not a ceiling.
 - Treat `.agent/SECURITY.md` as required context for agentic AI, tool, data, identity, or supply-chain-sensitive work.
 - Use `.agent/REVIEW_PROTOCOL.md` when work needs specialist, adversarial, subagent, or integration review.
+- Use `.agent/GIT_AND_MR_WORKFLOW.md` for branch, commit, PR/MR, merge, push, and cleanup work.
 
 ## Read First
 
@@ -32,6 +33,7 @@ README.md
 .agent/DONE.md
 .agent/QUALITY_BAR.md, for high-rigor work
 .agent/SECURITY.md, for security-sensitive work
+.agent/GIT_AND_MR_WORKFLOW.md, for branch, commit, PR/MR, merge, push, or cleanup work
 .agent/REVIEW_PROTOCOL.md, for high-risk review planning
 selected .agent/DOMAINS/* overlays, when active
 relevant source files
@@ -189,7 +191,8 @@ Do not:
 .agent/DONE.md                      Definition of done.
 .agent/QUALITY_BAR.md               Highest-standard engineering and scientific expectations.
 .agent/SECURITY.md                  Agentic AI, tool, data, and supply-chain security.
-.agent/ADAPTERS.md                  Adapting guidance to Codex, Claude, Gemini, Copilot, Cursor, Aider, and generic agents.
+.agent/GIT_AND_MR_WORKFLOW.md       Branch, commit, PR/MR, merge, push, and cleanup workflow.
+.agent/ADAPTERS.md                  Adapting guidance to Codex, Hermes Agent, Pi, Claude, OpenCode, Gemini, Copilot, Cursor, Aider, and generic agents.
 .agent/REVIEW_PROTOCOL.md           Self-review, specialist review, adversarial review, and integration review.
 .agent/NESTED_GUIDANCE.md           Monorepo and nested instruction guidance.
 .agent/DOMAINS/                     Optional domain overlays.

@@ -12,12 +12,13 @@ Use the full workflow for substantial changes. For tiny changes, use the same pr
 3. Refresh current external sources when the task depends on fast-moving facts.
 4. Identify the smallest safe change.
 5. Plan when risk warrants planning.
-6. Model security and safety risk when relevant.
-7. Implement narrowly.
-8. Validate with relevant checks.
-9. Review the diff.
-10. Request specialist review when risk warrants it.
-11. Summarize honestly.
+6. Use clean git and PR/MR workflow for branch, commit, review, merge, push, and cleanup work.
+7. Model security and safety risk when relevant.
+8. Implement narrowly.
+9. Validate with relevant checks.
+10. Review the diff.
+11. Request specialist review when risk warrants it.
+12. Summarize honestly.
 ```
 
 ## 1. Understand The Task
@@ -148,7 +149,26 @@ A plan should include:
 
 For a small localized change, a short inline plan is sufficient.
 
-## 6. Model Security And Safety Risk
+## 6. Use Clean Git And PR/MR Workflow
+
+For branch, commit, PR/MR, merge, push, or cleanup work, use `.agent/GIT_AND_MR_WORKFLOW.md`.
+
+At minimum:
+
+- preserve existing user changes,
+- use a feature branch for non-trivial work,
+- keep commits focused and descriptive,
+- stage only intentional files unless the user confirms the whole worktree is in scope,
+- validate before publishing,
+- use PR/MR review when required or expected,
+- merge only when policy and checks allow it,
+- push the merged result when the user asked for full closeout,
+- confirm hosted checks when they exist,
+- and clean up branches only after the merged result is verified.
+
+Do not stop at a local commit, branch push, or PR/MR creation when the user requested merge, push, CI confirmation, and cleanup.
+
+## 7. Model Security And Safety Risk
 
 For agent, MCP/tool, identity, secrets, network, sandbox, data, model, privacy, physical-world, or production-adjacent changes, create or update a threat model before implementation.
 
@@ -173,7 +193,7 @@ Security-sensitive work should identify:
 
 Request specialist or adversarial review when the change is high-risk.
 
-## 7. Implement Narrowly
+## 8. Implement Narrowly
 
 During implementation:
 
@@ -189,7 +209,7 @@ During implementation:
 
 When a discovered issue is outside the task, note it separately instead of fixing it opportunistically.
 
-## 8. Validate
+## 9. Validate
 
 Run the most relevant available checks.
 
@@ -225,7 +245,7 @@ For example:
 
 Never claim a check passed unless it was actually run and passed.
 
-## 9. Review The Diff
+## 10. Review The Diff
 
 Before finalizing, review the diff as if reviewing another engineer's work.
 
@@ -249,7 +269,7 @@ Check for:
 
 Use `.agent/TEMPLATES/REVIEW.md` for a structured review.
 
-## 10. Request Specialist Review When Needed
+## 11. Request Specialist Review When Needed
 
 Use `.agent/REVIEW_PROTOCOL.md` for review lanes, reviewer instructions, and disagreement handling.
 
@@ -269,7 +289,7 @@ Specialist review is triggered by:
 
 If specialist review is not available, record the gap and compensate with stronger local evidence where practical.
 
-## 11. Summarize Honestly
+## 12. Summarize Honestly
 
 Final summaries should be brief but evidence-based.
 
